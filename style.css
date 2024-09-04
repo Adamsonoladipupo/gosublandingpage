@@ -1,5 +1,5 @@
 
-
+/* Quick note: A = About, A-container = About container, O = Our Service, AC = Achievement, AQ = Qualification  */
 /* ------------- Variables ----------------------- */
 
 :root {
@@ -29,7 +29,7 @@
     position: sticky;
     z-index: 5;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 button{
@@ -166,6 +166,12 @@ a {
 .heroImage img{
     width: 100%;
 }
+.heroText h1{
+    font-size: 30px;
+    letter-spacing: -1.5px;
+    font-weight: 800;
+    line-height: 1.2;
+}
 .slider{ 
     width: 100%;
     overflow: hidden;
@@ -228,24 +234,6 @@ a {
 }
 
 /* -----------Styling Introduction section-------- */
-
-.I-container{
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    font-size: 25px;
-    
-}
-.I-container .hero-image img{
-width: 100%;
-max-width: 400px;
-height: auto;
-margin: 0px 0px -5px 0px;
-padding: 20px;
-margin-top: 20px;
-}
 
 .A-container{
     padding: 20px;
@@ -640,15 +628,18 @@ hr{
         }
         .slide {
             width: 100%;
-            max-height: 550px;
+            max-height: 400px;
             box-sizing: border-box;
             justify-content:center ;
             align-items: center;
-            padding: 0px 100px;
+            padding: 0px 50px;
             
         }
 
-
+        .heroText h1{
+            font-size: 32px;
+            font-weight: 1000;
+        }
 
 
 
@@ -758,6 +749,15 @@ hr{
         max-width: 500px;
         margin: 0px 50px 0 50px;
         border-radius: 5px;
+    }
+    .heroText h1{
+        font-size: 40px;
+        font-weight: 1000;
+    }
+    .slide {
+        max-height: 550px;
+        padding: 0px 70px;
+        
     }
 
 }
