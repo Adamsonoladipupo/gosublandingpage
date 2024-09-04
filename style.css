@@ -216,6 +216,9 @@ a {
     justify-content: space-between;
     transform: translateY(-50%);
 }
+.nav-buttons{
+    display: none;
+}
 .nav-button {
     background: none;
     width: 50px;
@@ -386,6 +389,7 @@ a {
 
   }
   .wrapper i {
+    display: none;
     top: 50%;
     height: 50px;
     width: 50px;
@@ -730,6 +734,9 @@ hr{
         }
         .belowHr div{
             margin-top: 0px;
+        }
+        .wrapper i {
+            display: block;
         }
 }
 
