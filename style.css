@@ -194,14 +194,16 @@ a {
 .dots {
     position: relative;
     bottom: 20px;
-    left: 100%;
+    left: 50%;
     transform: translateX(-50%);
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .dot {
-    width: 20px;
+    width: 15px;
     height: 2px;
-    margin: 0 5px;
+    margin: 0 4px;
     background: #757575;
     cursor: pointer;
 }
