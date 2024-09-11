@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Connection to google icon library-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    
+    <style>
+        
+/* Quick note: A = About, A-container = About container, O = Our Service, AC = Achievement, AQ = Qualification  */
+/* ------------- Variables ----------------------- */
+
+:root {
+    --pry-color: #FB470D;
+    --main-bg-color: #F1F1F2;
+    --button-hover: #eb3b00;
+
+}
+
+/* ----------------------------------------------- */
+/* ------------- Universal Styling ----------------*/
+/* ----------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', verdana;
+    font-family: 'Open Sans', verdana;
+    
+}
+
+.header{
+    background-color: var(--main-bg-color);
+    height: 60px;
+    top: 0;
+    position: sticky;
+    z-index: 5;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    margin-bottom: 10px;
+}
+
+button{
+    padding: 10px 30px 10px 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: var(--pry-color);
+    border: 1px solid var(--pry-color) ;
+    transition: 0.76s ease-in;
+}
+button:hover{
+    color: #fff;
+    background-color: var(--button-hover);
+}
+
+/* Page scroll animation for styling each section */
+.reveal{
+    position: relative;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 1.5s ease;
+}
+.reveal.active{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+body{
+    background-image: url(bg16d.svg);
+}
+
+/* -----------Styling Header --------------- */
+
+.logo{
+    display: block;
+}
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #000;
+}
+.hamburger {
+    display: block;
+    cursor: pointer;
+}
+.navbar {
+    background-color: var(--main-bg-color);
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px ;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.nav-menu {
+    position: fixed;
+    left: 100%;
+    top: 50px;
+    /* flex-direction: column; */
+    align-items:start ;
+    background-color: var(--main-bg-color);
+    width: 100%;
+    text-align: left;
+    transition: 0.5s;
+    padding: 20px;
+}
+.nav-menu.active {
+    left: 0;
+}
+.nav-item {
+    margin: 15px 0;
+}
+.nav-menu .nav-item a .button{
+    display:inline ;
+}
+.nav-link{
+    color: #000;
+}
+.nav-link:hover{
+    color: var(--button-hover);
+}
+.button{
+    background-color: var(--pry-color);
+    border-radius: 3px;
+    text-align: center;
+    width: 100%;
+    margin: 10px auto;
+    padding: 10px;
+    display: block;
+    color: #fff;
+    /* margin-left: 20px; */
+    
+}
+.button:hover{
+    background-color: var(--button-hover);
+    color: white;
+}
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active .bar:nth-child(1) {
+    -webkit-transform: translateY(8px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3) {
+    -webkit-transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* Hero Slider Section */
+.heroBtn{
+    background-color: var(--pry-color);
+    padding: 10px 40px;
+    color: white;
+    border-radius: 5px;
+}
+.mainContainer{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.heroImage img{
+    width: 100%;
+}
+.heroText h1{
+    font-size: 30px;
+    letter-spacing: -1.5px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+.slider{ 
+    width: 100%;
+    overflow: hidden;
+}
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    margin-top: -20px;
+}
+.slide {
+    min-width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    
+}
+.dots {
+    position: relative;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dot {
+    width: 15px;
+    height: 2px;
+    margin: 0 4px;
+    background: #757575;
+    cursor: pointer;
+}
+.dot.active {
+    background: rgb(255, 115, 0);
+}
+.nav-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+.nav-buttons{
+    display: none;
+}
+.nav-button {
+    background: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    color: #000;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+}
+.nav-buttons button:hover{
+    background-color: white;
+    color: #000;
+}
+
+/* -----------Styling Introduction section-------- */
+
+.A-container{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.A-Image img{
+    display: none;
+}
+/* -----------Styling Our Services section ------- */
+.O-container{
+    padding: 20px;
+}
+.O-cards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    grid-template-columns: minmax (100px 2fr);
+    gap: 2rem;
+    margin: 50px 0 0px 0 ;
+}
+.o-card{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    display: block;
+    justify-content: center;
+    align-items:center ;
+    text-align: center;
+    background-color: #fff;
+    transition: 1s ease;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+}
+.O-icon{
+    margin: 20px;
+    
+}
+.o-card:hover{
+    background-color: #ffffff;
+}
+
+/* -----------Styling Achievement and Qualification section ------- */
+.curveEdge{
+    width: 100px;
+    height: 100px;
+    background-color: var(--pry-color);
+}
+.AQ-container{
+    background-color: var(--pry-color);
+    color: #ffffff;
+    padding: 40px 20px 40px 20px;
+    border-top-right-radius: 100px;
+    
+}
+.AQ-container:before{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin-top: -140px;
+    content: '';
+    z-index: 1;
+    left: 0;
+    background-color: var(--main-bg-color);
+    border-bottom-left-radius: 100px;
+}
+
+.AC-texts{
+    padding: 20px;
+}
+.AC-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.AC-counterCard{
+    display: block;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    color: #000000;
+    background-color: #ffffff;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.5s;
+    
+}
+.AC-counterCard:hover{
+    border-bottom: 3px solid var(--button-hover);
+    border-radius: 10px 10px 0px 0px ;
+}
+.AC-counterCard span{
+    margin: 20px;
+}
+.Q-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.AC-card{
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 15px 20px;
+    border-radius: 5px;
+    width:fit-content;
+    display: grid;
+    justify-content:center;
+    align-items:self-start;
+    color: var(--pry-color);
+    max-width: 340px;
+}
+.AC-container{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center; 
+}
+.Q-container{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.Q-card{
+    background-color: #ffffff;
+    margin: 20px 10px;
+    padding: 10px;
+    color: var(--pry-color);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+}
+
+/* -----------Styling Testimony section ------- */
+.wrapper {
+    width: 100%;
+    position: relative;
+    padding: 10px;
+
+  }
+  .wrapper i {
+    display: none;
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+  }
+  .wrapper i:active{
+    transform: translateY(-50%) scale(0.85);
+  }
+  .wrapper i:first-child{
+    left: 2px;
+  }
+  .wrapper i:last-child{
+    right: 2px;
+  }
+  .wrapper .carousel{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel.no-transition {
+    scroll-behavior: auto;
+  }
+  .carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+  .carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+  }
+  .carousel :where(.card, .img) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .carousel .card {
+    scroll-snap-align: start;
+    height: 342px;
+    list-style: none;
+    background: #fff;
+    cursor: pointer;
+    /* padding-bottom: 15px; */
+    padding: 0px 20px 15px 20px ;
+    flex-direction: column;
+    border-radius: 8px;
+    text-align: center; 
+    margin-top: 40px;
+  }
+  .carousel .card h2 {
+    font-weight: 500;
+    font-size: 1.56rem;
+    margin: 30px 0 5px;
+  }
+  .carousel .card span {
+    color: #6A6D78;
+    font-size: 1.31rem;
+  }
+/* ----------Styling Trusted Partner section ---- */
+
+
+@keyframes slide {
+
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+.P-container:before,
+.P-container:after{
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 100%;
+    content: '';
+    z-index: 1;
+}
+    .P-container{
+        overflow: hidden;
+        padding: 60px;
+        white-space: nowrap;
+        position: relative;
+    }
+
+    .P-container:before{
+        left: 0;
+        background-color: var(--main-bg-color);
+    }
+    .P-container:after{
+        right: 0;
+        background-color: var(--main-bg-color);
+    }
+    .P-container:hover .P-slide{
+        animation-play-state: paused;
+    }
+    .P-slide img{
+        height: 25px;
+        margin: 0 20px;
+    }
+    .P-slide{
+        display: inline-block;
+        animation: 35s slide infinite linear;
+    
+    }
+    .grayscale {
+        filter: grayscale(100%);  
+        transition: filter 0.5s ease;
+    }
+    
+    .grayscale:hover {
+        filter: none;
+    }
+
+/* --------------Styling Footer section ---------- */
+
+.footer{
+    background-color: #000000;
+    color: #ffffff;
+    padding: 40px;
+    
+}
+.footer h4{
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    
+}
+.FooterLinks{
+    display: block;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.FooterLinks h2{
+    color: #fff;
+    font-size: 30px;
+    font-weight: lighter;
+}
+.footer p{
+    color: #ffffff;
+    margin-bottom: 5px;
+    font-weight: lighter;
+}
+.footer a{
+    color: #ffffff;
+}
+hr{
+    border-color: #4d4d4d;
+}
+.hr{
+    text-align: center;
+    padding: 20px 0 20px 0;
+}
+.hr p{
+    padding: 20px 0;
+}
+
+.footerHR .hr p{
+    
+    color: #ffffff;
+}
+
+.F-newsLetter input{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--pry-color);
+    border-radius: 5px;
+    outline: none;
+    color: black;
+    font-size: 1em;
+}
+.subFooterLink{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+.belowHr{
+    text-align: center; 
+}
+.belowHr div{
+    margin-top: 20px;
+}
+.copyright{
+    font-weight: lighter;
+}
+/* ----------------------------------------------- */
+/* ---------------- Tablet Styling ----------------*/
+/* ----------------------------------------------- */
+
+@media (min-width: 720px) {
+    /* Navigation menu */
+    .header{
+        margin-bottom: 0px;
+    }
+    .nav-menu {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        justify-content: flex-end;
+        background-color: transparent;
+
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+        .nav-item {
+            margin: 0 10px;
+        }
+
+        .nav-link:hover{
+            color: var(--button-hover);
+        }
+        .mainContainer{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            text-align: start;
+        }
+        
+
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+            /* margin-top: -20px; */
+        }
+        .slide {
+            width: 100%;
+            max-height: 400px;
+            box-sizing: border-box;
+            justify-content:center ;
+            align-items: center;
+            padding: 0px 50px;
+            
+        }
+
+        .heroText h1{
+            font-size: 32px;
+            font-weight: 1000;
+        }
+
+
+
+        .button{
+                display: none;
+        }
+
+        .A-container{
+            /* margin-top: -150px; */
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+       
+
+
+        /* Our services */
+        .O-cards{
+            display: flex;
+            justify-content: center;
+            /* flex-wrap: wrap; */
+            grid-template-columns: 40%;
+            grid-template-rows: 400px ;
+            gap: 20px;
+            margin: 50px 0 0px 0 ;
+        }
+        .o-card{
+            width: 360px;
+            height: auto;
+            padding: 20px;
+            display: block;
+            justify-content: center;
+            align-items:center ;
+            text-align: center;
+            background-color: #fff;
+            transition: 1s ease;
+            border-radius: 5px;
+        }
+        .AC-cards{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .AC-counterCard{
+            width: 35%;
+            
+        }
+
+        .Q-container{
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .Q-card{
+            width: 30%;
+        }
+/* Testimony section */
+        .wrapper .carousel {
+            grid-auto-columns: calc((100% / 2) - 9px);
+        }
+        .P-container:before,
+        .P-container:after{
+            position: absolute;
+            top: 0;
+            width: 40px;
+            height: 100%;
+            content: '';
+            z-index: 1;
+        }
+        .P-slide img{
+            height: 35px;
+            margin: 0 30px;
+        }
+
+        .FooterLinks{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:space-between;
+        }
+        .belowHr{
+            text-align: center; 
+            display: flex; 
+            justify-content: space-between;
+        }
+        .belowHr div{
+            margin-top: 0px;
+        }
+        .wrapper i {
+            display: block;
+        }
+}
+
+@media (min-width: 900px){
+    .AC-counter{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .AC-texts{
+        max-width: 40%;
+        font-size: 1.3rem;
+        /* text-align: justify; */
+    }
+    .A-Image img{
+        display: block;
+        max-width: 500px;
+        margin: 0px 50px 0 50px;
+        border-radius: 5px;
+    }
+    .heroText h1{
+        font-size: 40px;
+        font-weight: 1000;
+    }
+    .slide {
+        max-height: 550px;
+        padding: 0px 70px;
+        
+    }
+
+}
+
+/* ----------------------------------------------- */
+/* ---------------- Laptop Styling ----------------*/
+/* ----------------------------------------------- */
+@media ( min-width: 1000px) {
+        .wrapper .carousel {
+            grid-auto-columns: calc((100% / 3) - 12px);
+        }
+        .wrapper {
+            padding: 50px;
+        }
+        .wrapper i:first-child{
+            left: 20px;
+          }
+          .wrapper i:last-child{
+            right: 20px;
+          }
+}
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html"><img src="logo.svg" alt="logo" width="30px" class="logo">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Product</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Testimonies</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">FAQ</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contect</a></li>
+                <li class="nav-item"><a href="https://gosub.ng/login" class="nav-link">Log in</a></li>
+                <a href="https://gosub.ng/register" class="nav-link button">Get Started</a>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="slider">
+        <div class="slides">
+            <div class="mainContainer slide">
+                <div class="heroText">
+                    <h1>Welcome to your number one Airtime to Cash Conversion platform</h1> <br><br>
+                    <a href="https://gosub.ng/register" class="heroBtn">Get Start</a>
+                </div>
+                <div class="heroImage">
+                    <img src="image/Hero-img1.png" alt="">
+                </div>
+            </div>
+            <div class="mainContainer slide">
+                <div class="heroText">
+                    <h1>Your No:1 Platform for affordable Airtime and Data plan.</h1> <br><br>
+                    <a href="https://gosub.ng/register" class="heroBtn">Get Start</a>
+                </div>
+                <div class="heroImage">
+                    <img src="image/Hero-img2.png" alt="">
+                </div>
+            </div>
+            <div class="mainContainer slide">
+                <div class="heroText">
+                    <h1>Recharge your prepaid electricity meter any time on Gosub.ng</h1> <br><br>
+                    <a href="https://gosub.ng/register" class="heroBtn">Get Start</a>
+                </div>
+                <div class="heroImage">
+                    <img src="image/Hero-img3.png" alt="">
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="dots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="nav-buttons">
+            <button class="nav-button" id="prevBtn">&#10094;</button>
+            <button class="nav-button" id="nextBtn">&#10095;</button>
+        </div>
+    </div>
+
+
+
+
+    <!-- This is the Introductory Section -->
+    <section class="releal">
+        <!-- This is the About Section -->
+        <div class="A-container container">
+            <div class="A-Image">
+                <img src="image/about us.jpg" alt="" ">
+            </div>
+            <div class=" container">
+                <h1>What is Gosub.ng?</h1>
+                <p><b>Telecommunication Solution Provider</b></p>
+                <p style="padding: 20px 0px;">Gosub.ng is a platform that sells telecommunication products and services to individuals and corporate customers in Nigeria. Through our platform, anyone can buy telecommunication products or services such as data plans, airtime transfer or convert airtime to cash, and process bills payments. With our state-of-the-art automated system, your satisfaction, privacy andsecurity are 100% guarantee</p>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="reveal">
+        <!-- This is the Our Services Section -->
+    
+        <div class="O-container container">
+            <h2>Our Services</h2>
+            <div class="O-cards reveal">
+                <div class="o-card">
+                    <div class="O-icon" >
+                        <svg height="24" width="30" viewBox="0 0 640 512"><path fill="#000000" d="M54.2 202.9C123.2 136.7 216.8 96 320 96s196.8 40.7 265.8 106.9c12.8 12.2 33 11.8 45.2-.9s11.8-33-.9-45.2C549.7 79.5 440.4 32 320 32S90.3 79.5 9.8 156.7C-2.9 169-3.3 189.2 8.9 202s32.5 13.2 45.2 .9zM320 256c56.8 0 108.6 21.1 148.2 56c13.3 11.7 33.5 10.4 45.2-2.8s10.4-33.5-2.8-45.2C459.8 219.2 393 192 320 192s-139.8 27.2-190.5 72c-13.3 11.7-14.5 31.9-2.8 45.2s31.9 14.5 45.2 2.8c39.5-34.9 91.3-56 148.2-56zm64 160a64 64 0 1 0 -128 0 64 64 0 1 0 128 0z"/></svg>
+                    </div>
+                        <h3>Airtime to Cash</h3>
+                        <p>Our airtime to cash service allows anyone to convert their airtime to cash within 10 minutes.</p>
+                        <a href="PageTemplate.html"><button>Convert</button></a>
+                    
+                </div>
+                <div class="o-card ">
+                <div class="O-icon" >
+                    <svg height="24" width="30" viewBox="0 0 640 512"><path fill="#000000" d="M54.2 202.9C123.2 136.7 216.8 96 320 96s196.8 40.7 265.8 106.9c12.8 12.2 33 11.8 45.2-.9s11.8-33-.9-45.2C549.7 79.5 440.4 32 320 32S90.3 79.5 9.8 156.7C-2.9 169-3.3 189.2 8.9 202s32.5 13.2 45.2 .9zM320 256c56.8 0 108.6 21.1 148.2 56c13.3 11.7 33.5 10.4 45.2-2.8s10.4-33.5-2.8-45.2C459.8 219.2 393 192 320 192s-139.8 27.2-190.5 72c-13.3 11.7-14.5 31.9-2.8 45.2s31.9 14.5 45.2 2.8c39.5-34.9 91.3-56 148.2-56zm64 160a64 64 0 1 0 -128 0 64 64 0 1 0 128 0z"/></svg>
+                </div>
+                <h3>Airtime to Cash</h3>
+                <p>Our airtime to cash service allows anyone to convert their airtime to cash within 10 minutes.</p>
+                <a href="PageTemplate.html"><button>Convert</button></a>
+                </div>
+            <div class="o-card">
+                <div class="O-icon" >
+                    <svg height="24" width="30" viewBox="0 0 640 512"><path fill="#000000" d="M54.2 202.9C123.2 136.7 216.8 96 320 96s196.8 40.7 265.8 106.9c12.8 12.2 33 11.8 45.2-.9s11.8-33-.9-45.2C549.7 79.5 440.4 32 320 32S90.3 79.5 9.8 156.7C-2.9 169-3.3 189.2 8.9 202s32.5 13.2 45.2 .9zM320 256c56.8 0 108.6 21.1 148.2 56c13.3 11.7 33.5 10.4 45.2-2.8s10.4-33.5-2.8-45.2C459.8 219.2 393 192 320 192s-139.8 27.2-190.5 72c-13.3 11.7-14.5 31.9-2.8 45.2s31.9 14.5 45.2 2.8c39.5-34.9 91.3-56 148.2-56zm64 160a64 64 0 1 0 -128 0 64 64 0 1 0 128 0z"/></svg>
+                </div>
+                <h3>Airtime to Cash</h3>
+                <p>Our airtime to cash service allows anyone to convert their airtime to cash within 10 minutes.</p>
+                <a href="signup.html"><button>Convert</button></a>
+            </div>
+            <div class="o-card ">
+                <div class="O-icon" >
+                    <svg height="24" width="30" viewBox="0 0 640 512"><path fill="#000000" d="M54.2 202.9C123.2 136.7 216.8 96 320 96s196.8 40.7 265.8 106.9c12.8 12.2 33 11.8 45.2-.9s11.8-33-.9-45.2C549.7 79.5 440.4 32 320 32S90.3 79.5 9.8 156.7C-2.9 169-3.3 189.2 8.9 202s32.5 13.2 45.2 .9zM320 256c56.8 0 108.6 21.1 148.2 56c13.3 11.7 33.5 10.4 45.2-2.8s10.4-33.5-2.8-45.2C459.8 219.2 393 192 320 192s-139.8 27.2-190.5 72c-13.3 11.7-14.5 31.9-2.8 45.2s31.9 14.5 45.2 2.8c39.5-34.9 91.3-56 148.2-56zm64 160a64 64 0 1 0 -128 0 64 64 0 1 0 128 0z"/></svg>
+                </div>
+                <h3>Airtime to Cash</h3>
+                <p>Our airtime to cash service allows anyone to convert their airtime to cash within 10 minutes.</p>
+                <a href="signup.html"><button>Convert</button></a>
+            </div>
+            <div class="o-card">
+                <div class="O-icon" >
+                    <svg height="24" width="30" viewBox="0 0 640 512"><path fill="#000000" d="M54.2 202.9C123.2 136.7 216.8 96 320 96s196.8 40.7 265.8 106.9c12.8 12.2 33 11.8 45.2-.9s11.8-33-.9-45.2C549.7 79.5 440.4 32 320 32S90.3 79.5 9.8 156.7C-2.9 169-3.3 189.2 8.9 202s32.5 13.2 45.2 .9zM320 256c56.8 0 108.6 21.1 148.2 56c13.3 11.7 33.5 10.4 45.2-2.8s10.4-33.5-2.8-45.2C459.8 219.2 393 192 320 192s-139.8 27.2-190.5 72c-13.3 11.7-14.5 31.9-2.8 45.2s31.9 14.5 45.2 2.8c39.5-34.9 91.3-56 148.2-56zm64 160a64 64 0 1 0 -128 0 64 64 0 1 0 128 0z"/></svg>
+                </div>
+                <h3>Airtime to Cash</h3>
+                <p>Our airtime to cash service allows anyone to convert their airtime to cash within 10 minutes.</p>
+                <a href="signup.html"><button>Convert</button></a>
+            </div>
+            <div class="o-card ">
+                <div class="O-icon" >
+                    <svg height="24" width="30" viewBox="0 0 640 512"><path fill="#000000" d="M54.2 202.9C123.2 136.7 216.8 96 320 96s196.8 40.7 265.8 106.9c12.8 12.2 33 11.8 45.2-.9s11.8-33-.9-45.2C549.7 79.5 440.4 32 320 32S90.3 79.5 9.8 156.7C-2.9 169-3.3 189.2 8.9 202s32.5 13.2 45.2 .9zM320 256c56.8 0 108.6 21.1 148.2 56c13.3 11.7 33.5 10.4 45.2-2.8s10.4-33.5-2.8-45.2C459.8 219.2 393 192 320 192s-139.8 27.2-190.5 72c-13.3 11.7-14.5 31.9-2.8 45.2s31.9 14.5 45.2 2.8c39.5-34.9 91.3-56 148.2-56zm64 160a64 64 0 1 0 -128 0 64 64 0 1 0 128 0z"/></svg>
+                </div>
+                <h3>Airtime to Cash</h3>
+                <p>Our airtime to cash service allows anyone to convert their airtime to cash within 10 minutes.</p>
+                <a href="signup.html"><button>Convert</button></a>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reveal">
+        <!-- This is the Achievement and Qualification Section -->
+
+        <div class="curveEdge"></div> 
+        <div class="AQ-container container">
+            <div style="text-align: center; margin-top: 40px;">
+                <h2 style="padding-bottom: 30px;">Faster Growth</h2>
+            </div>
+
+    <!-- this the section for AC Number Counter  -->
+    <div class="AC-counter">
+        <div class="AC-texts">
+            <h3>The numbers speak for us</h3>
+            <p>Our platform is trusted by over 80,000 Nigerians. This is possible because of the quality service and top-notch customer support we render to our users. Register an account if you have not or log in if you already have an account, we hope to see you soon.</p>
+        </div>
+        <div class="AC-cards">
+            <div class="AC-counterCard counter-container">
+                <span><svg height="40"  viewBox="0 0 448 512"><path fill="#FB470D" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg></span>
+                <p id="counter1">0</p>
+                <p>Happy Customers</p>
+            </div>
+            <div class="AC-counterCard counter-container">
+                <span><svg height="40" viewBox="0 0 384 512"><path fill="#FB470D" d="M14 2.2C22.5-1.7 32.5-.3 39.6 5.8L80 40.4 120.4 5.8c9-7.7 22.3-7.7 31.2 0L192 40.4 232.4 5.8c9-7.7 22.3-7.7 31.2 0L304 40.4 344.4 5.8c7.1-6.1 17.1-7.5 25.6-3.6s14 12.4 14 21.8V488c0 9.4-5.5 17.9-14 21.8s-18.5 2.5-25.6-3.6L304 471.6l-40.4 34.6c-9 7.7-22.3 7.7-31.2 0L192 471.6l-40.4 34.6c-9 7.7-22.3 7.7-31.2 0L80 471.6 39.6 506.2c-7.1 6.1-17.1 7.5-25.6 3.6S0 497.4 0 488V24C0 14.6 5.5 6.1 14 2.2zM96 144c-8.8 0-16 7.2-16 16s7.2 16 16 16H288c8.8 0 16-7.2 16-16s-7.2-16-16-16H96zM80 352c0 8.8 7.2 16 16 16H288c8.8 0 16-7.2 16-16s-7.2-16-16-16H96c-8.8 0-16 7.2-16 16zM96 240c-8.8 0-16 7.2-16 16s7.2 16 16 16H288c8.8 0 16-7.2 16-16s-7.2-16-16-16H96z"/></svg></span>
+                <p id="counter2" class="bold">0</p>
+                <p>Transactions</p>
+            </div>
+            <div class="AC-counterCard counter-container">
+                <span><svg height="40" viewBox="0 0 448 512"><path fill="#FB470D" d="M0 80V229.5c0 17 6.7 33.3 18.7 45.3l176 176c25 25 65.5 25 90.5 0L418.7 317.3c25-25 25-65.5 0-90.5l-176-176c-12-12-28.3-18.7-45.3-18.7H48C21.5 32 0 53.5 0 80zm112 32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg></span>
+                <p id="counter3">0</p>
+                <p>Discount</p>
+            </div>
+            <div class="AC-counterCard counter-container">
+                <span><svg height="40" viewBox="0 0 512 512"><path fill="#FB470D" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg></span>
+                <p id="counter4">0</p>
+                <p>Support Assistance</p>
+            </div>
+        </div>
+        
+    </div>
+    
+
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <h2>Why Gosub</h2>
+        </div>
+        <div class="Q-container reveal">
+            <div class="Q-card "  >
+                <div class="Q-icon">
+                    <img src="image/convert.svg" alt="" style="width: 50px; margin: 10px;">
+                </div>
+                <h3>Sub-header Title</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero magni incidunt vitae explicabo voluptatum quis dolor consectetur maxime enim? Quas velit vero nemo dolores maiores similique sequi veniam, vitae impedit.</p>
+            </div>
+            <div class="Q-card ">
+                <div class="Q-icon">
+                    <img src="image/convert.svg" alt="" style="width: 50px; margin: 10px;">
+                </div>
+                <h3>Sub-header Title</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero magni incidunt vitae explicabo voluptatum quis dolor consectetur maxime enim? Quas velit vero nemo dolores maiores similique sequi veniam, vitae impedit.</p>
+            </div>
+            <div class="Q-card">
+                <div class="Q-icon">
+                    <img src="image/convert.svg" alt="" style="width: 50px; margin: 10px;">
+                </div>
+                <h3>Sub-header Title</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero magni incidunt vitae explicabo voluptatum quis dolor consectetur maxime enim? Quas velit vero nemo dolores maiores similique sequi veniam, vitae impedit.</p>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reveal">
+<h2 style="text-align: center; padding: 30px 0px 0px 0px; margin-top: 50px;">Customer's Review</h2>
+<div class="wrapper">
+    <i id="left" class="fa-solid fa-angle-left">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" width="12.5" viewBox="0 0 320 512" ><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+    </i>
+    <ul class="carousel">
+      <li class="card" >
+        <div class="quote">
+            <svg style="width: 100px;" viewBox="0 0 448 512"><path fill="#FB470D" d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V320 288 216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H320c-35.3 0-64-28.7-64-64V320 288 216z"/></svg>
+        </div>
+        <p>This guys are the best airtime to cash app in Africa, with seemless transaction, best customer care response, I'm short of words, but they are very very good operating at world class standard.</p>
+        <span><p style="padding-top: 10px;"><strong><a href="https://g.co/kgs/THfQRDY" style="color: #000000;">Favour Nnaoha </a></strong></p></span>
+        
+      </li>
+      <li class="card">
+        <div class="quote">
+            <svg style="width: 100px;" viewBox="0 0 448 512"><path fill="#FB470D" d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V320 288 216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H320c-35.3 0-64-28.7-64-64V320 288 216z"/></svg>
+        </div>
+        <p>Gosub is very nice, fast and reliable……so I bought 20k airtime instead of 2k from my bank(in this sapa period  ) I was looking for where to convert it to cash when I came across gosub. Registration was so easy, took less than 10minute and I converted the airtime to cash and got paid in less than 5min 💃💃💃</p>
+        <span><p style="padding-top: 10px;"><strong><a href="https://g.co/kgs/xL6pfWC" style="color: #000000;">Adenike Balogun </a></strong></p></span>
+      </li>
+      <li class="card">
+        <div class="quote">
+            <svg style="width: 100px;" viewBox="0 0 448 512"><path fill="#FB470D" d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V320 288 216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H320c-35.3 0-64-28.7-64-64V320 288 216z"/></svg>
+        </div>
+        <p>They are super reliable and integrity conscious. My airtime was converted to cash immediately. . I'll recommend them anytime any day.</p>
+        <span><p style="padding-top: 10px;"><strong><a href="https://g.co/kgs/5iE8zrg" style="color: #000000;">Omoye Nancy </a></strong></p></span>
+      </li>
+      <li class="card">
+        <div class="quote">
+            <svg style="width: 100px;" viewBox="0 0 448 512"><path fill="#FB470D" d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V320 288 216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H320c-35.3 0-64-28.7-64-64V320 288 216z"/></svg>
+        </div>
+        <p>This is the best Airtime conversion app you can ever come across, very very reliable.
+            My first experience with them is totally awesome.
+            More Grace!</p>
+        <span><p style="padding-top: 10px;"><strong><a href="https://g.co/kgs/LpmLGpe" style="color: #000000; ">Omeke Toochukwu Livinus </a></strong></p></span>
+      </li>
+      <li class="card">
+        <div class="quote">
+            <svg style="width: 100px;" viewBox="0 0 448 512"><path fill="#FB470D" d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V320 288 216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H320c-35.3 0-64-28.7-64-64V320 288 216z"/></svg>
+        </div>
+        <p>The best and fastest converting platform I ever come across. I mean it real... Keep on the good work</p>
+        <span><p style="padding-top: 10px;"><strong><a href="https://g.co/kgs/cLnc8ru" style="color: #000000;">Udeme Udoh </a></strong></p></span>
+      </li>
+      <li class="card">
+        <div class="quote">
+            <svg style="width: 100px;" viewBox="0 0 448 512"><path fill="#FB470D" d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V320 288 216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H320c-35.3 0-64-28.7-64-64V320 288 216z"/></svg>
+        </div>
+        <p>The best and fastest converting platform I ever come across. I mean it real... Keep on the good work</p>
+        <span><p style="padding-top: 10px;"><strong><a href="https://g.co/kgs/cLnc8ru" style="color: #000000;">Udeme Udoh </a></strong></p></span>
+      </li>
+    </ul>
+    <i id="right" class="fa-solid fa-angle-right">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" width="12.5" viewBox="0 0 320 512" class=""><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+    </i>
+  </div>
+
+    <!-- End of the testimony Card  -->
+
+    </section>
+
+    <!-- This is the Trusted Partner Section -->
+    
+    <div style="text-align: center; margin-top: 40px;">
+        <h2>Trusted by</h2>
+    </div>
+    <div class="P-container">
+        <div class="P-slide">
+            <img src="partners/MTN-Logo.png" alt="" class="grayscale">
+            <img src="partners/9 mobile.png" alt="" class="grayscale">
+            <img src="partners/Airtel-logo.png" alt="" class="grayscale">
+            <img src="partners/BEDC.png" alt="" class="grayscale">
+            <img src="partners/eedc.png" alt="" class="grayscale">
+            <img src="partners/EKEDC.png" alt="" class="grayscale">
+            <img src="partners/Flutterwave.png" alt="" class="grayscale">
+            <img src="partners/glo.png" alt="" class="grayscale">
+            <img src="partners/IKEJA-ELECTRIC.png" alt="" class="grayscale">
+            <img src="partners/kaduna edc.png" alt="" class="grayscale">
+            <img src="partners/KEDCO.png" alt="" class="grayscale">
+            <img src="partners/moniPoint.png" alt="" class="grayscale">
+            <img src="partners/phedc.png" alt="" class="grayscale">
+            <img src="partners/yedo.png" alt="" class="grayscale">
+            <img src="partners/verve.png" alt="" class="grayscale">
+            <img src="partners/visa.png" alt="" class="grayscale">
+            <img src="partners/MasterCard.png" alt="" class="grayscale">
+            <img src="partners/ibedc.png" alt="" class="grayscale">
+        </div>
+        <div class="P-slide">
+            <img src="partners/MTN-Logo.png" alt="" class="grayscale">
+            <img src="partners/9 mobile.png" alt="" class="grayscale">
+            <img src="partners/Airtel-logo.png" alt="" class="grayscale">
+            <img src="partners/BEDC.png" alt="" class="grayscale">
+            <img src="partners/eedc.png" alt="" class="grayscale">
+            <img src="partners/EKEDC.png" alt="" class="grayscale">
+            <img src="partners/Flutterwave.png" alt="" class="grayscale">
+            <img src="partners/glo.png" alt="" class="grayscale">
+            <img src="partners/IKEJA-ELECTRIC.png" alt="" class="grayscale">
+            <img src="partners/kaduna edc.png" alt="" class="grayscale">
+            <img src="partners/KEDCO.png" alt="" class="grayscale">
+            <img src="partners/moniPoint.png" alt="" class="grayscale">
+            <img src="partners/phedc.png" alt="" class="grayscale">
+            <img src="partners/yedo.png" alt="" class="grayscale">
+            <img src="partners/verve.png" alt="" class="grayscale">
+            <img src="partners/visa.png" alt="" class="grayscale">
+            <img src="partners/MasterCard.png" alt="" class="grayscale">
+            <img src="partners/ibedc.png" alt="" class="grayscale">
+        </div>
+        
+    </div>
+
+    <!-- This is the Footer Section of the page -->
+
+    <div class="footer">
+        <div class="FooterLinks">
+            <div class="F-newsLetter" style="margin-top: 20px; margin-top: -1px;">
+                <div style="display: flex; justify-items: center; align-items: center;margin-top: 10px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36 " style="width: 30px; height: 30px;margin-right: 10px;"><defs><style>.cls-1{fill:#ffffff;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M36,1.74V0H17.65A18,18,0,1,0,32.81,7.84,7.41,7.41,0,0,0,36,1.74ZM18,26.67A8.67,8.67,0,1,1,26.63,18,8.67,8.67,0,0,1,18,26.67Z"/><ellipse class="cls-1" cx="17.97" cy="18" rx="3.8" ry="3.81"/></g></g></svg>
+                    <h2 style="margin-top: 3px;">Gosub.ng</h2>
+                </div>
+                <p>Subscribe to our newsletter </p>
+                <input type="text" placeholder="coming soon"><br>
+                <a href="#"><button style="margin-top: 10px; background-color: #f26522;">Subscribe</button></a>
+            </div>
+                <div class="F-helpLink">
+                    <h4>Help Links</h4>
+                    <p><a href="#">FAQ</a></p>
+                    <p><a href="#">Tutorials</a></p>
+                    <p><a href="#">Terms and Conditions</a></p>
+                    <p><a href="#">Support</a></p>
+                    <p><a href="#">Customer Care </a></p>
+                </div>
+                
+                <div class="F-information">
+                    <h4>Information </h4>
+                    <p><a href="#">Blog</a></p>
+                    <p><a href="#">About</a></p>
+                    <p><a href="#">Pricing</a></p>
+                    <p><a href="#">Services</a></p>
+                    <p><a href="#">Partner</a></p>
+                    <p><a href="#">Products</a></p>
+                </div>
+    
+                <div class="F-contact">
+                    
+                    <h4>Contact</h4>
+                    <div style="color: #ffffff;">
+                        <div style="display: flex; align-items: center;">
+                            <svg width="15" viewBox="0 0 512 512"><path fill="#ffffff" d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+                            <p style="padding-left: 10px;">09064172909</p>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center;">
+                            <svg width="15" viewBox="0 0 512 512"><path fill="#ffffff" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg> 
+                            <p style="padding-left: 10px;">contact@gosub.ng</p>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <svg width="15" viewBox="0 0 384 512"><path fill="#ffffff" d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+                            <p style="padding-left: 10px;">Nigeria</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            
+            
+            
+            
+            
+            
+        </div>
+
+    <div class="footerHR">
+        
+        <div class="hr">
+            <hr>
+        </div>
+        <div class="belowHr" >
+            <span id="copyright" class="copyright"></span>
+            <div class="F-socialIcons">
+
+                <!-- <h4 style="margin-top: 10px;">Connect with us on </h4> -->
+                <a href="https://www.instagram.com/gosub.ng?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" ><svg width="20" viewBox="0 0 448 512"><path fill="#ffffff" d="M194.4 211.7a53.3 53.3 0 1 0 59.3 88.7 53.3 53.3 0 1 0 -59.3-88.7zm142.3-68.4c-5.2-5.2-11.5-9.3-18.4-12c-18.1-7.1-57.6-6.8-83.1-6.5c-4.1 0-7.9 .1-11.2 .1c-3.3 0-7.2 0-11.4-.1c-25.5-.3-64.8-.7-82.9 6.5c-6.9 2.7-13.1 6.8-18.4 12s-9.3 11.5-12 18.4c-7.1 18.1-6.7 57.7-6.5 83.2c0 4.1 .1 7.9 .1 11.1s0 7-.1 11.1c-.2 25.5-.6 65.1 6.5 83.2c2.7 6.9 6.8 13.1 12 18.4s11.5 9.3 18.4 12c18.1 7.1 57.6 6.8 83.1 6.5c4.1 0 7.9-.1 11.2-.1c3.3 0 7.2 0 11.4 .1c25.5 .3 64.8 .7 82.9-6.5c6.9-2.7 13.1-6.8 18.4-12s9.3-11.5 12-18.4c7.2-18 6.8-57.4 6.5-83c0-4.2-.1-8.1-.1-11.4s0-7.1 .1-11.4c.3-25.5 .7-64.9-6.5-83l0 0c-2.7-6.9-6.8-13.1-12-18.4zm-67.1 44.5A82 82 0 1 1 178.4 324.2a82 82 0 1 1 91.1-136.4zm29.2-1.3c-3.1-2.1-5.6-5.1-7.1-8.6s-1.8-7.3-1.1-11.1s2.6-7.1 5.2-9.8s6.1-4.5 9.8-5.2s7.6-.4 11.1 1.1s6.5 3.9 8.6 7s3.2 6.8 3.2 10.6c0 2.5-.5 5-1.4 7.3s-2.4 4.4-4.1 6.2s-3.9 3.2-6.2 4.2s-4.8 1.5-7.3 1.5l0 0c-3.8 0-7.5-1.1-10.6-3.2zM448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM357 389c-18.7 18.7-41.4 24.6-67 25.9c-26.4 1.5-105.6 1.5-132 0c-25.6-1.3-48.3-7.2-67-25.9s-24.6-41.4-25.8-67c-1.5-26.4-1.5-105.6 0-132c1.3-25.6 7.1-48.3 25.8-67s41.5-24.6 67-25.8c26.4-1.5 105.6-1.5 132 0c25.6 1.3 48.3 7.1 67 25.8s24.6 41.4 25.8 67c1.5 26.3 1.5 105.4 0 131.9c-1.3 25.6-7.1 48.3-25.8 67z"/></svg></a>
+                <a href="https://www.linkedin.com/company/gosubng/"><svg  width="20" viewBox="0 0 448 512"><path fill="#ffffff" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a>
+                <a href="https://twitter.com/GosubNg"><svg width="20" viewBox="0 0 448 512"><path fill="#ffffff" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm297.1 84L257.3 234.6 379.4 396H283.8L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5L313.6 116h47.5zM323.3 367.6L153.4 142.9H125.1L296.9 367.6h26.3z"/></svg></a>
+                <a href="#"><svg width="20" viewBox="0 0 448 512"><path fill="#ffffff" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64h98.2V334.2H109.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H255V480H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"/></svg></a>
+                <a href="https://t.me/gosubng"><svg width="20" viewBox="0 0 496 512"><path fill="#ffffff" d="M248 8C111 8 0 119 0 256S111 504 248 504 496 393 496 256 385 8 248 8zM363 176.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7 .2-.7 .3-3.1-1.2-4.4s-3.6-.8-5.1-.5q-3.3 .7-104.6 69.1-14.8 10.2-26.9 9.9c-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3q.8-6.7 18.5-13.7 108.4-47.2 144.6-62.3c68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6 .5 9.6 2.9a10.5 10.5 0 0 1 3.5 6.7A43.8 43.8 0 0 1 363 176.7z"/></svg></a>
+                <a href="https://api.whatsapp.com/send/?phone=2349064172909&text&type=phone_number&app_absent=0"><svg width="20" viewBox="0 0 448 512"><path fill="#ffffff" d="M92.1 254.6c0 24.9 7 49.2 20.2 70.1l3.1 5-13.3 48.6L152 365.2l4.8 2.9c20.2 12 43.4 18.4 67.1 18.4h.1c72.6 0 133.3-59.1 133.3-131.8c0-35.2-15.2-68.3-40.1-93.2c-25-25-58-38.7-93.2-38.7c-72.7 0-131.8 59.1-131.9 131.8zM274.8 330c-12.6 1.9-22.4 .9-47.5-9.9c-36.8-15.9-61.8-51.5-66.9-58.7c-.4-.6-.7-.9-.8-1.1c-2-2.6-16.2-21.5-16.2-41c0-18.4 9-27.9 13.2-32.3c.3-.3 .5-.5 .7-.8c3.6-4 7.9-5 10.6-5c2.6 0 5.3 0 7.6 .1c.3 0 .5 0 .8 0c2.3 0 5.2 0 8.1 6.8c1.2 2.9 3 7.3 4.9 11.8c3.3 8 6.7 16.3 7.3 17.6c1 2 1.7 4.3 .3 6.9c-3.4 6.8-6.9 10.4-9.3 13c-3.1 3.2-4.5 4.7-2.3 8.6c15.3 26.3 30.6 35.4 53.9 47.1c4 2 6.3 1.7 8.6-1c2.3-2.6 9.9-11.6 12.5-15.5c2.6-4 5.3-3.3 8.9-2s23.1 10.9 27.1 12.9c.8 .4 1.5 .7 2.1 1c2.8 1.4 4.7 2.3 5.5 3.6c.9 1.9 .9 9.9-2.4 19.1c-3.3 9.3-19.1 17.7-26.7 18.8zM448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM148.1 393.9L64 416l22.5-82.2c-13.9-24-21.2-51.3-21.2-79.3C65.4 167.1 136.5 96 223.9 96c42.4 0 82.2 16.5 112.2 46.5c29.9 30 47.9 69.8 47.9 112.2c0 87.4-72.7 158.5-160.1 158.5c-26.6 0-52.7-6.7-75.8-19.3z"/></svg></a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+<script>
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+    const navLink = document.querySelectorAll(".nav-link");
+
+    hamburger.addEventListener("click", mobileMenu);
+    navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+    function mobileMenu() {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+    }
+    function closeMenu() {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+    }
+</script>
+
+
+    <!-- Hero Image Slider Script section -->
+    <script>
+        const slides = document.querySelector('.slides');
+        const dots = document.querySelectorAll('.dot');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            slides.style.transform = `translateX(${-index * 100}%)`;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? dots.length - 1 : currentIndex - 1;
+            showSlide(currentIndex);
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex === dots.length - 1) ? 0 : currentIndex + 1;
+            showSlide(currentIndex);
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                showSlide(currentIndex);
+            });
+        });
+
+        // Auto-slide functionality
+        setInterval(() => {
+            currentIndex = (currentIndex === dots.length - 1) ? 0 : currentIndex + 1;
+            showSlide(currentIndex);
+        }, 5000); // Change slide every 5 seconds
+    </script>
+
+
+<!-- Script for controlling the testimony carousel card -->
+
+<!-- ________________________________________________________ -->
+<script>
+    const wrapper = document.querySelector(".wrapper");
+    const carousel = document.querySelector(".carousel");
+    const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+    const arrowBtns = document.querySelectorAll(".wrapper i");
+    const carouselChildrens = [...carousel.children];
+
+let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
+
+// Get the number of cards that can fit in the carousel at once
+let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+
+// Insert copies of the last few cards to beginning of carousel for infinite scrolling
+carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
+    carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+});
+
+// Insert copies of the first few cards to end of carousel for infinite scrolling
+carouselChildrens.slice(0, cardPerView).forEach(card => {
+    carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+});
+
+// Scroll the carousel at appropriate postition to hide first few duplicate cards on Firefox
+carousel.classList.add("no-transition");
+carousel.scrollLeft = carousel.offsetWidth;
+carousel.classList.remove("no-transition");
+
+// Add event listeners for the arrow buttons to scroll the carousel left and right
+arrowBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        carousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
+    });
+});
+
+const dragStart = (e) => {
+    isDragging = true;
+    carousel.classList.add("dragging");
+    // Records the initial cursor and scroll position of the carousel
+    startX = e.pageX;
+    startScrollLeft = carousel.scrollLeft;
+}
+
+const dragging = (e) => {
+    if(!isDragging) return; // if isDragging is false return from here
+    // Updates the scroll position of the carousel based on the cursor movement
+    carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+}
+
+const dragStop = () => {
+    isDragging = false;
+    carousel.classList.remove("dragging");
+}
+
+const infiniteScroll = () => {
+    // If the carousel is at the beginning, scroll to the end
+    if(carousel.scrollLeft === 0) {
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
+        carousel.classList.remove("no-transition");
+    }
+    // If the carousel is at the end, scroll to the beginning
+    else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.offsetWidth;
+        carousel.classList.remove("no-transition");
+    }
+
+    // Clear existing timeout & start autoplay if mouse is not hovering over carousel
+    clearTimeout(timeoutId);
+    if(!wrapper.matches(":hover")) autoPlay();
+}
+
+const autoPlay = () => {
+    if(window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
+    // Autoplay the carousel after every 2500 ms
+    timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
+}
+autoPlay();
+
+carousel.addEventListener("mousedown", dragStart);
+carousel.addEventListener("mousemove", dragging);
+document.addEventListener("mouseup", dragStop);
+carousel.addEventListener("scroll", infiniteScroll);
+wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+wrapper.addEventListener("mouseleave", autoPlay);
+</script>
+<!-- ________________________________________________________ -->
+
+
+<!-- script for the new counter for achievement -->
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const counters = [
+            { element: document.getElementById('counter1'), target: 8000, duration: 2000 },
+            { element: document.getElementById('counter2'), target: 50000, duration: 3000 },
+            { element: document.getElementById('counter3'), target: 22000, duration: 2500 },
+            { element: document.getElementById('counter4'), target: 50000, duration: 3000 }
+        ];
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = counters.find(c => c.element === entry.target);
+                    if (counter && !counter.started) {
+                        counter.started = true;
+                        let startTimestamp = null;
+
+                        const formatNumber = (num) => {
+                            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "+";
+                        };
+
+                        const step = (timestamp) => {
+                            if (!startTimestamp) startTimestamp = timestamp;
+                            const progress = Math.min((timestamp - startTimestamp) / counter.duration, 1);
+                            const currentNumber = Math.floor(progress * counter.target);
+                            counter.element.textContent = formatNumber(currentNumber);
+                            if (progress < 1) {
+                                window.requestAnimationFrame(step);
+                            }
+                        };
+
+                        window.requestAnimationFrame(step);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        counters.forEach(counter => {
+            observer.observe(counter.element);
+        });
+    });
+</script>
+
+
+
+
+
+<!-- This is the script for controlling the scoll animation of the page -->
+    
+<script type="text/javascript">
+    window.addEventListener('scroll', reveal);
+
+    function reveal(){
+        var reveals = document.querySelectorAll('.reveal');
+
+        for(var i = 0; i < reveals.length; i++){
+
+            var windowHeight = window.innerHeight;
+            var revealTop = reveals[i].getBoundingClientRect().top;
+            var revealPoint = 40;
+
+            if(revealTop < windowHeight - revealPoint){
+                reveals[i].classList.add('active');
+            }
+
+            else{
+                reveals[i].classList.remove('active');
+            }
+
+        }
+    }
+
+</script>
+<!-- the script for controlling the copyright  -->
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+        const currentYear = new Date().getFullYear();
+        const copyrightText = `Copyright © ${currentYear} Gosub All Rights Reserved.`;
+        document.getElementById("copyright").textContent = copyrightText;
+    });
+</script>
+</html>
