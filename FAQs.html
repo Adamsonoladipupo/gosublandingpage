@@ -14,7 +14,7 @@
 /* ------------- Variables ----------------------- */
 
 :root {
-    --pry-color: #F04A23;
+    --pry-color: #FB470D;
     --main-bg-color: #F1F1F2;
     --button-hover: #eb3b00;
 
@@ -34,11 +34,12 @@
 }
 
 .header{
-    background-color: #efefef;
+    background-color: var(--main-bg-color);
     height: 60px;
     top: 0;
     position: sticky;
     z-index: 5;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
     margin-bottom: 10px;
 }
 
@@ -66,6 +67,10 @@ button:hover{
 .reveal.active{
     transform: translateY(0px);
     opacity: 1;
+}
+
+body{
+    background-image: url(bg16d.svg);
 }
 
 /* -----------Styling Header --------------- */
@@ -165,71 +170,61 @@ a {
 .A-Image img{
     display: none;
 }
-/* This is for styling the Blog page content */
-.blog{
-    margin: 15px;
-}
-    .blogHeader{
-        margin: 15px 0px;
-        background: url(image/networkMass.png) ;
-        background-color: var(--pry-color);
-        border-radius: 5px;
-        color: #fff;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: 120px;
-    }
-    .BgImage{
-        position: fixed;
-        width: 50%;
-    }
-    .blogHeaderItems{
-        padding: 20px;
-    }
-    .blogHeaderItems p{
-        margin: 10px 0px;
-    }
-    .blogHeader input{
-        width: 100%;
-        max-width: 210px;
-        padding: 12px;
-        border: 1px solid var(--pry-color);
-        border-radius: 5px;
-        outline: none;
-        color: black;
-        font-size: 0.9rem;
-        margin-right: 20px;
-    }
-    .blogArticles{
-        margin: 15px 0px;
-    }
-    .blogArticles a{
-        color: #000;
-        font-size: 18px;
-        font-weight: bold;
-    }
-    .tag{
-        color: var(--button-hover);
-        font-size: 16px;
-    }
-    .date{
-        color: #4d4d4d;
-        font-size: 14px;
-    }
-    .blogItems{
-        display: block;
-    }
-    .blogArticlesItems{
-        display: block;
-        margin: 12px 0px 20px 0px;
-    }
-    .blogArticlesItems div{
-        margin: 0px;
-    }
-    .blogArticlesItems img{
-        width: 100%;
-        border-radius: 5px;
-    }
+/* ---------------- FAQs Styling ----------------- */
+        .FAQsHeader{
+            background-color: var(--button-hover);
+            padding: 30px;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .FAQs{
+            margin: 20px;
+        }
+        .FAQsImage img{
+            display: none;
+            width: 150px;
+            transform: rotate(20deg);
+            margin-right: 150px;
+        }
+        .FAQsArrow{
+            background-color: #000;
+        }
+        .faq-title {
+            cursor: pointer;
+            padding: 15px;
+            margin: 1px 0;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 15px;
+            transition: max-height 0.4s ease-out, padding 0.6s ease-out;
+            background-color: #fff;
+            color: #5c5c5c;
+            
+        }
+        .faq-answer.open {
+            max-height: 500px;
+            padding: 0 15px 15px 15px;
+            margin: -1px 0 0 0;
+        }
+        .arrow {
+            transition: transform 0.3s, color 0.3s;
+        }
+        .arrow.down {
+            transform: rotate(0deg);
+            color: black;
+        }
+        .arrow.up {
+            transform: rotate(180deg);
+            color: #fff;
+        }
 
 /* --------------Styling Footer section ---------- */
 
@@ -291,7 +286,6 @@ hr{
     font-size: 0.9rem;
     margin-right: 20px;
 }
-
 .subFooterLink{
     display: flex;
     flex-wrap: wrap;
@@ -307,7 +301,6 @@ hr{
 .copyright{
     font-weight: lighter;
 }
-
 /* ----------------------------------------------- */
 /* ---------------- Tablet Styling ----------------*/
 /* ----------------------------------------------- */
@@ -360,51 +353,20 @@ hr{
         .belowHr div{
             margin-top: 0px;
         }
-        /* This is for styling the Blog page content */
-        .blog{
-            margin: 20px 100px;
-        }
-        .blogHeader{
-            background-position: 250px;
-    }
-        .blogHeaderItems{
-            padding: 50px;
-        }
-        .blogArticlesItems{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        }
-        .blogArticlesItems div{
-            margin: 0px 15px;
-        }
-        .blogArticlesItems img{
-        width: 350px;
-        }
 
 }
 
 @media (min-width: 900px){
+        .FAQsHeader{
+            padding: 50px 100px;
+        }
+        .FAQs{
+            margin: 30px 100px;
+        }
+        .FAQsImage img{
+            display: block;
+        }
 
-    /* This is for styling the Blog page content */
-        .blog{
-                margin: 20px 70px;
-            }
-            .blogHeader{
-                background-size: 50%;
-                background-position: 700px;
-        }
-        .blogHeaderItems{
-            padding: 70px 50px;
-        }
-        .blogArticlesItems img{
-            width: 250px;
-            }
-        .blogItems{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            }
 
 }
 
@@ -420,14 +382,14 @@ hr{
 <body>
     <header class="header">
         <nav class="navbar">
-            <a href="index.html" aria-label="gosub registration link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="30px" height="30px"; class="logo"><path fill="#F04A23"  d="M36,1.74V0H17.65A18,18,0,1,0,32.81,7.84,7.41,7.41,0,0,0,36,1.74ZM18,26.67A8.67,8.67,0,1,1,26.63,18,8.67,8.67,0,0,1,18,26.67Z"/><ellipse fill="#F04A23" cx="17.97" cy="18" rx="3.8" ry="3.81"/></svg></a>
+            <a href="index.html"><img src="logo.svg" alt="logo" width="30px" class="logo">
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Product</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Testimonies</a></li>
-                <li class="nav-item"><a href="FAQs.html" class="nav-link">FAQ</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">FAQ</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contect</a></li>
                 <li class="nav-item"><a href="https://gosub.ng/login" class="nav-link">Log in</a></li>
                 <a href="https://gosub.ng/register" class="nav-link button">Get Started</a>
             </ul>
@@ -438,43 +400,43 @@ hr{
             </div>
         </nav>
     </header>
-    <!-- This section contains the Blog page contents -->
-    <section class="blog">
-        <div class="blogHeader">
-            <div class="blogHeaderItems">
-                <h2>Gosub Blog</h2>
-                <p>Learn more about how to convert your airtime to cash and other services</p>
-                <input type="text" placeholder="Subscribe to our newsletter"><br>
-                <a href="#"><button style="margin-top: 10px; background-color: #F04A23; border: 1px solid #fff;">Subscribe</button></a>
+    <div class="FAQsHeader">
+        <div>
+            <h2>Frequently asked Question</h2>
+            <p>Having Problems? Contact us.</p>
+        </div>
+        <div class="FAQsImage ">
+            <img src="image/Question Mark.png" alt="">
+        </div>
+        
+    </div>
+
+    <section class="FAQs">
+        <div class="Q&A">
+            <div class="faq-title" onclick="toggleAnswer(this)">
+                WHow do I fund my account?
+                <span class="arrow down">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.18 13.77" style="width: 15px;" class=" FAQsArrow"><polygon class="cls-1" points="25.18 1.19 12.6 13.77 12.59 13.76 12.58 13.77 0 1.19 1.19 0 12.59 11.41 24 0 25.18 1.19"/></svg>
+                </span>
+            </div>
+            <div class="faq-answer">
+                <p>You can return any item within 30 days for a full refund. Please ensure that the item is in its original condition, with all packaging and tags intact. Items that have been worn, damaged, or altered in any way will not be eligible for a return. Additionally, clearance or sale items are non-refundable. Once we receive your return, it may take up to 7-10 business days for your refund to be processed and appear in your account.</p>
+            </div>
+        </div>
+        <div class="Q&A">
+            <div class="faq-title" onclick="toggleAnswer(this)">
+                How do I convert my Airtime to cash? wefhwuif weiofhquihfuiqhf
+                <span class="arrow down">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.18 13.77" style="width: 15px;" class=" FAQsArrow"><polygon class="cls-1" points="25.18 1.19 12.6 13.77 12.59 13.76 12.58 13.77 0 1.19 1.19 0 12.59 11.41 24 0 25.18 1.19"/></svg>
+                </span>
+            </div>
+            <div class="faq-answer">
+                <p>You can return any item within 30 days for a full refund. Please ensure that the item is in its original condition, with all packaging and tags intact. Items that have been worn, damaged, or altered in any way will not be eligible for a return. Additionally, clearance or sale items are non-refundable. Once we receive your return, it may take up to 7-10 business days for your refund to be processed and appear in your account.</p>
             </div>
         </div>
 
-        <div class="blogArticles">
-            <div class="blogItems">
-                <div class="blogArticlesItems">
-                    <a href="blogPost1.html"><img src="image/blogimage.png" alt="image"></a>
-                    <div>
-                        <p class="tag">Article</p>
-                        <a href="blogPost1.html">Learn more about how to 
-                        convert your</a>
-                        <p class="date">23 june, 2024</p>
-                    </div>
-                </div>
-                <div class="blogArticlesItems">
-                    <a href=""><img src="image/blogimage.png" alt="image"></a>
-                    <div>
-                        <p class="tag">Article</p>
-                        <a href="#">Learn more about how to 
-                        convert your</a>
-                        <p class="date">23 june, 2024</p>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-
-        <a href="#" style="display: flex; align-items: center; justify-content: center;"><button style="margin-top: 10px; background-color: #F04A23; ">Show More!</button></a>
     </section>
+
 
 
     <!-- This is the Footer Section of the page -->
@@ -487,11 +449,11 @@ hr{
                     <h2 style="margin-top: 3px;">Gosub.ng</h2>
                 </div>
                 <input type="text" placeholder="Subscribe to our newsletter"><br>
-                <a href="#"><button style="margin-top: 10px; background-color: #F04A23;">Subscribe</button></a>
+                <a href="#"><button style="margin-top: 10px; background-color: #f26522;">Subscribe</button></a>
             </div>
                 <div class="F-helpLink" style="margin-right: 10px;">
                     <h4>Help Links</h4>
-                    <p><a href="FAQs.html">FAQ</a></p>
+                    <p><a href="#">FAQ</a></p>
                     <p><a href="#">Tutorials</a></p>
                     <p><a href="#">Terms and Conditions</a></p>
                     <p><a href="#">Support</a></p>
@@ -584,5 +546,25 @@ hr{
         const copyrightText = `Copyright © ${currentYear} Gosub All Rights Reserved.`;
         document.getElementById("copyright").textContent = copyrightText;
     });
+</script>
+
+<!-- the script for controlling opening and closing of the FAQs  -->
+<script>
+    function toggleAnswer(element) {
+        const answer = element.nextElementSibling;
+        const arrow = element.querySelector(".arrow");
+
+        if (answer.classList.contains("open")) {
+            // Collapse the answer
+            answer.classList.remove("open");
+            arrow.classList.remove("up");
+            arrow.classList.add("down");
+        } else {
+            // Expand the answer
+            answer.classList.add("open");
+            arrow.classList.remove("down");
+            arrow.classList.add("up");
+        }
+    }
 </script>
 </html>
