@@ -178,6 +178,11 @@ a {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            font-size: 20px;
+        }
+        .FAQsHeader p{
+            font-weight: lighter;
+            margin-top: 10px;
         }
         .FAQs{
             margin: 20px;
@@ -186,10 +191,7 @@ a {
             display: none;
             width: 150px;
             transform: rotate(20deg);
-            margin-right: 150px;
-        }
-        .FAQsArrow{
-            background-color: #000;
+            margin-right: 100px;
         }
         .faq-title {
             cursor: pointer;
@@ -214,6 +216,11 @@ a {
             padding: 0 15px 15px 15px;
             margin: -1px 0 0 0;
         }
+        section a{
+            color: var(--pry-color);
+            text-decoration: none;
+        }
+
         .arrow {
             transition: transform 0.3s, color 0.3s;
         }
@@ -223,7 +230,7 @@ a {
         }
         .arrow.up {
             transform: rotate(180deg);
-            color: #fff;
+            color: Blue;
         }
 
 /* --------------Styling Footer section ---------- */
@@ -359,6 +366,7 @@ hr{
 @media (min-width: 900px){
         .FAQsHeader{
             padding: 50px 100px;
+            font-size: 30px;
         }
         .FAQs{
             margin: 30px 100px;
@@ -377,7 +385,7 @@ hr{
 
 }
     </style>
-    <title>Document</title>
+    <title>Gosub frequently asked questions</title>
 </head>
 <body>
     <header class="header">
@@ -388,7 +396,7 @@ hr{
                 <li class="nav-item"><a href="#" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Product</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Testimonies</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">FAQ</a></li>
+                <li class="nav-item"><a href="FAQs.html" class="nav-link">FAQ</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Contect</a></li>
                 <li class="nav-item"><a href="https://gosub.ng/login" class="nav-link">Log in</a></li>
                 <a href="https://gosub.ng/register" class="nav-link button">Get Started</a>
@@ -414,25 +422,120 @@ hr{
     <section class="FAQs">
         <div class="Q&A">
             <div class="faq-title" onclick="toggleAnswer(this)">
-                WHow do I fund my account?
-                <span class="arrow down">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.18 13.77" style="width: 15px;" class=" FAQsArrow"><polygon class="cls-1" points="25.18 1.19 12.6 13.77 12.59 13.76 12.58 13.77 0 1.19 1.19 0 12.59 11.41 24 0 25.18 1.19"/></svg>
+                How do I start?
+                <span>
+                    <svg class="arrow down" width="25px"  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                 </span>
             </div>
             <div class="faq-answer">
-                <p>You can return any item within 30 days for a full refund. Please ensure that the item is in its original condition, with all packaging and tags intact. Items that have been worn, damaged, or altered in any way will not be eligible for a return. Additionally, clearance or sale items are non-refundable. Once we receive your return, it may take up to 7-10 business days for your refund to be processed and appear in your account.</p>
+                <p>The first step to start using gosub.ng is to <a href="https://gosub.ng/register">register</a> an account by providing the necessary details on the registration form, then Click on Get Started.
+                    <br><br>
+                    A verification token will be sent to your email to complete the registration process. Copy the token and paste it on the form presented to you by gosub.ng, then click on Complete Registration.
+                    <br><br>
+                    A new page will open up, on the new page, you will see a congratulation message telling you your registration was successful. Click on the <a href="https://gosub.ng/login">login</a> button below the message.</p>
             </div>
         </div>
         <div class="Q&A">
             <div class="faq-title" onclick="toggleAnswer(this)">
-                How do I convert my Airtime to cash? wefhwuif weiofhquihfuiqhf
-                <span class="arrow down">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.18 13.77" style="width: 15px;" class=" FAQsArrow"><polygon class="cls-1" points="25.18 1.19 12.6 13.77 12.59 13.76 12.58 13.77 0 1.19 1.19 0 12.59 11.41 24 0 25.18 1.19"/></svg>
+                After Registration what's next?
+                <span>
+                    <svg class="arrow down" width="25px"  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                 </span>
             </div>
             <div class="faq-answer">
-                <p>You can return any item within 30 days for a full refund. Please ensure that the item is in its original condition, with all packaging and tags intact. Items that have been worn, damaged, or altered in any way will not be eligible for a return. Additionally, clearance or sale items are non-refundable. Once we receive your return, it may take up to 7-10 business days for your refund to be processed and appear in your account.</p>
+                <p>The next step after registration is to <strong>fund your wallet</strong> .</p>
             </div>
+        </div>
+        <div class="Q&A">
+            <div class="faq-title" onclick="toggleAnswer(this)">
+                What can I do with gosub.ng?
+                <span>
+                    <svg class="arrow down" width="25px"  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+            </div>
+            <div class="faq-answer">
+                <p>After you have successfully funded your wallet, the next thing you may want to do is to start buying our products or subscribing to our services. We have a range of products and services available on gosub.ng:</p>
+                <br>
+                <ol>
+                    <li>Airtime top-up</li>
+                    <li>Data plan subscription</li>
+                    <li>Convert airtime to cash</li>
+                    <li>Electricity bills payment</li>
+                    <li>Cable TV subscription</li>
+                </ol>
+                <br>
+                <p>You can buy or subscribe to any of the above products and services at a discount rate.</p>
+                <p>If you are not yet a registered member of gosub.ng, click on <a href="https://gosub.ng/register">register</a> to get started or <a href="https://gosub.ng/login">login</a> if you are already registered.</p>
+            </div>
+        </div>
+        <div class="Q&A">
+            <div class="faq-title" onclick="toggleAnswer(this)">
+                How do I fund my wallet: ATM Card or Cardless Bank transaction?
+                <span>
+                    <svg class="arrow down" width="25px"  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+            </div>
+            <div class="faq-answer">
+                <p>To use this method, go to fund wallet page either by clicking on the amount or balance at the top of your account when you are login or through the transfer menu.</p>
+                <br>
+                <p>Select ATM Card or Bank as the payment method, enter the amount you want to deposit into your gosub.ng wallet, enter your gosub.ng PIN, then click on Pay Securely.</p>
+                <br>
+                <p>You will be redirected to your Bank payment portal, you can choose to either pay with Card by entering your ATM Card details or any other payment option available there, all of them do the same thing, the choice of which to use is yours.</p>
+                <br>
+                <p>Follow the payment instructions on the Bank payment portal. When you have completed the payment and your account was successfully debited, you will be redirected back to your gosub.ng account with a notification message on your gosub.ng account informing you that your wallet was successfully funded.</p>
+            </div>
+        </div>
+        <div class="Q&A">
+            <div class="faq-title" onclick="toggleAnswer(this)">
+                What's the minimum amount allowed for conversion on Gosub. ng?
+                <span>
+                    <svg class="arrow down" width="25px"  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+            </div>
+            <div class="faq-answer">
+                <p>The minimum amount allowed for conversion is 1000 for all networks.</p>
+            </div>
+        </div>
+        <div class="Q&A">
+            <div class="faq-title" onclick="toggleAnswer(this)">
+                How do I become a data reseller using Gosub. ng?
+                <span>
+                    <svg class="arrow down" width="25px"  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+            </div>
+            <div class="faq-answer">
+                <p>You can become a data reseller by purchasing data plans on Gosub.ng at affordable prices and reselling at your price to others. When you buy data plans and airtime on <a href="https://gosub.ng/register">our website</a>, you enjoy up to 20% discount on data and up to 5% discount on airtime<p>
+            </div>
+        </div>
+        <div class="Q&A">
+            <div class="faq-title" onclick="toggleAnswer(this)">
+                How to earn money on Gosub.ng through our referral program?
+                <span>
+                    <svg class="arrow down" width="25px"  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+            </div>
+            <div class="faq-answer">
+                <p>You can earn free funds in your wallet when you refer your friends and family. </p>
+                <p>You and the person who <a href="https://gosub.ng/register">registers</a> with your link will earn ₦150 each (₦300 total) when both of you have used the online wallet funding to fund your wallet with at least ₦2,000 each.<p>
+            </div>
+        </div>
+        <div style="margin-top: 20px;">
+            <p>You may also want to read:</p>
+            <p> <a href="">Plan Subscription</a> | <a href="">Airtime Top-up</a> | <a href="">Convert Airtime to Cash</a> | <a href="">Cable TV Subscription</a> | <a href="">Bills Payment</a> | <a href="">Referral Program</a></p>
         </div>
 
     </section>
@@ -453,7 +556,7 @@ hr{
             </div>
                 <div class="F-helpLink" style="margin-right: 10px;">
                     <h4>Help Links</h4>
-                    <p><a href="#">FAQ</a></p>
+                    <p><a href="FAQs.html">FAQ</a></p>
                     <p><a href="#">Tutorials</a></p>
                     <p><a href="#">Terms and Conditions</a></p>
                     <p><a href="#">Support</a></p>
