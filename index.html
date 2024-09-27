@@ -192,15 +192,16 @@ a {
     display: flex;
     transition: transform 1s ease-in-out;
     width: 100%;
-    margin-top: -20px;
+    margin-top: -10px;
 }
 .slide {
     min-width: 100%;
-    height: 85vh;
+    height: 90vh;
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    margin-top: 30px;
     
 }
 .dots {
@@ -429,7 +430,7 @@ a {
     line-height: 50px;
     background: transparent;
     border-radius: 50%;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.23); 
     transform: translateY(-50%);
     transition: transform 0.1s linear;
   }
@@ -452,7 +453,8 @@ a {
     border-radius: 8px;
     scroll-behavior: smooth;
     scrollbar-width: none;
-    padding: 0 0 10px 0;
+    padding: 0 0px 10px 0px;
+    /* box-shadow: 0 3px 6px rgba(0,0,0,0.23); */
     
   }
   .carousel::-webkit-scrollbar {
@@ -485,8 +487,9 @@ a {
     flex-direction: column;
     border-radius: 8px;
     text-align: center; 
-    margin-top: 40px;
+    margin-top: 10px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+    border: 1px solid #cecece;
   }
   .carousel .card h2 {
     font-weight: 500;
