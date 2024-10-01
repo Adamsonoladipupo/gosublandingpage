@@ -175,6 +175,7 @@ a {
 }
 .heroImage img{
     width: 100%;
+    margin-top: 30px;
     
 
 }
@@ -184,6 +185,9 @@ a {
     font-weight: 800;
     line-height: 1.2;
 }
+.heroText{
+    margin: 30px 0px;
+}
 .slider{ 
     width: 100%;
     overflow: hidden;
@@ -192,16 +196,17 @@ a {
     display: flex;
     transition: transform 1s ease-in-out;
     width: 100%;
+    height: auto;
     margin-top: -10px;
 }
 .slide {
     min-width: 100%;
-    height: 90vh;
+    height: auto;
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    margin-top: 30px;
+    margin-top: 10px;
     
 }
 .dots {
@@ -288,7 +293,8 @@ a {
     background-color: #fff;
     transition: 1s ease;
     border-radius: 5px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+    /* box-shadow: 0 3px 6px rgba(0,0,0,0.23); */
+    box-shadow:0 2px 12px #0000001f;
 }
 .O-icon{
     margin: 20px;
@@ -407,7 +413,7 @@ a {
     text-align: center;
     border-radius: 5px;
     width: 100%;
-    min-height: 200px;
+    height: auto;
     box-shadow: 0 3px 6px rgba(0,0,0,0.23);
 }
 
@@ -577,11 +583,28 @@ a {
 
 /* --------------Styling Footer section ---------- */
 
+.footerCurveEdge{
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+}
 .footer{
     background-color: #000000;
     color: #ffffff;
     padding: 40px;
+    border-top-right-radius: 100px;
     
+}
+.footer:before{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin-top: -140px;
+    content: '';
+    z-index: 1;
+    left: 0;
+    background-color: #fff;
+    border-bottom-left-radius: 100px;
 }
 .footer h4{
     color: var(--pry-color);
@@ -776,6 +799,7 @@ hr{
         }
         .Q-card{
             width: 30%;
+            min-height: 350px;
         }
 /* Testimony section */
         .wrapper .carousel {
@@ -797,7 +821,6 @@ hr{
 
         .FooterLinks{
             display: flex;
-            flex-wrap: wrap;
             justify-content:space-between;
         }
         .belowHr{
@@ -839,6 +862,10 @@ hr{
         padding: 0px 70px;
         
     }
+    .Q-card{
+            width: 30%;
+            min-height: 240px;
+        }
 
 }
 
@@ -872,11 +899,11 @@ hr{
             <a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="30px" height="30px"; class="logo"><path fill="#FB470D"  d="M36,1.74V0H17.65A18,18,0,1,0,32.81,7.84,7.41,7.41,0,0,0,36,1.74ZM18,26.67A8.67,8.67,0,1,1,26.63,18,8.67,8.67,0,0,1,18,26.67Z"/><ellipse fill="#F04A23" cx="17.97" cy="18" rx="3.8" ry="3.81"/></svg></a>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Product</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Testimonies</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">FAQ</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Contect</a></li>
+                <li class="nav-item"><a href="#aboutUs" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#testimonies" class="nav-link">Testimonies</a></li>
+                <li class="nav-item"><a href="FAQs.html" class="nav-link">FAQs</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
                 <li class="nav-item"><a href="https://gosub.ng/login" class="nav-link">Log in</a></li>
                 <a href="https://gosub.ng/register" class="nav-link button">Register</a>
             </ul>
@@ -937,7 +964,7 @@ hr{
     <!-- This is the Introductory Section -->
     <section class="releal">
         <!-- This is the About Section -->
-        <div class="A-container container">
+        <div class="A-container container" id="aboutUs">
             <div class="A-Image">
                 <img src="img/about us 2.jpg" alt="">
             </div>
@@ -954,8 +981,8 @@ hr{
     <section class="reveal">
         <!-- This is the Our Services Section -->
     
-        <div class="O-container container">
-            <h2>Our Services</h2>
+        <div class="O-container container" >
+            <h2 id="services">Our Services</h2>
             <div class="O-cards reveal">
                 <div class="o-card">
                     <div class="O-icon" >
@@ -1081,7 +1108,7 @@ hr{
     </section>
 
     <section class="reveal">
-        <h2 style="text-align: center; padding: 30px 0px 0px 0px; margin-top: 50px;">Customer's Review</h2>
+        <h2 style="text-align: center; padding: 30px 0px 0px 0px; margin-top: 50px;" id="testimonies">Testimonies</h2>
         <div class="wrapper">
             <i id="left" class="fa-solid fa-angle-left">
                 <svg xmlns="http://www.w3.org/2000/svg" height="20" width="12.5" viewBox="0 0 320 512" ><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -1235,15 +1262,17 @@ hr{
 
     <!-- This is the Footer Section of the page -->
 
-    <div class="footer">
+    <div class="footerCurveEdge"></div> 
+    <div class="footer" id="contact">
         <div class="FooterLinks">
 
             
             <div class="F-newsLetter" style="margin-top: 20px;">
-                
-                <div style="display: flex; justify-items: center; align-items: center;margin-top: 10px; margin-bottom: 10px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="30px" height="30px"; class="logo"><path fill="#fff"  d="M36,1.74V0H17.65A18,18,0,1,0,32.81,7.84,7.41,7.41,0,0,0,36,1.74ZM18,26.67A8.67,8.67,0,1,1,26.63,18,8.67,8.67,0,0,1,18,26.67Z"/><ellipse fill="#fff" cx="17.97" cy="18" rx="3.8" ry="3.81"/></svg>
-                    <span style="font-size:30px; font-weight: 500px; margin: 10px;">Gosub.ng</span>
+                <div style="display: grid; justify-items: center; align-items: center;margin-top: 10px; margin-bottom: 10px;">
+                    <img src="footer logo.png" alt="" style="width: 180px;">
+                    <img src="footer logo2.png" alt="" style="width: 180px;">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="30px" height="30px"; class="logo"><path fill="#fff"  d="M36,1.74V0H17.65A18,18,0,1,0,32.81,7.84,7.41,7.41,0,0,0,36,1.74ZM18,26.67A8.67,8.67,0,1,1,26.63,18,8.67,8.67,0,0,1,18,26.67Z"/><ellipse fill="#fff" cx="17.97" cy="18" rx="3.8" ry="3.81"/></svg>
+                    <span style="font-size:30px; font-weight: 500px; margin: 10px;">Gosub.ng</span> -->
                 </div>
                 <input type="text" placeholder="Subscribe to our newsletter"><br>
                 <a href="#"><button style="margin-top: 10px; background-color: #f26522;">Subscribe</button></a>
@@ -1514,7 +1543,6 @@ wrapper.addEventListener("mouseleave", autoPlay);
         });
     });
 </script>
-
 
 
 
