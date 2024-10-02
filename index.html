@@ -407,14 +407,17 @@ a {
     margin: 20px 10px;
     padding: 10px;
     color: #000;
-    display: grid;
+    /* display: grid; */
     justify-content: center;
     align-items: center;
     text-align: center;
     border-radius: 5px;
     width: 100%;
-    height: auto;
+    height: 220px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+}
+.Q-card h3{
+    margin-bottom: 5px;
 }
 
 /* -----------Styling Testimony section ------- */
@@ -650,6 +653,9 @@ hr{
     color: black;
     font-size: 1em;
 }
+.F-newsLetter input{
+    width: 100%;
+}
 .subFooterLink{
     display: flex;
     flex-wrap: wrap;
@@ -799,7 +805,7 @@ hr{
         }
         .Q-card{
             width: 30%;
-            min-height: 350px;
+            min-height: 300px;
         }
 /* Testimony section */
         .wrapper .carousel {
@@ -822,6 +828,9 @@ hr{
         .FooterLinks{
             display: flex;
             justify-content:space-between;
+        }
+        .F-newsLetter input{
+        width: 230px;
         }
         .belowHr{
             text-align: center; 
@@ -864,7 +873,7 @@ hr{
     }
     .Q-card{
             width: 30%;
-            min-height: 240px;
+            min-height: 200px;
         }
 
 }
@@ -935,6 +944,7 @@ hr{
                     <img src="img/Hero-img2.png" alt="">
                 </div>
             </div>
+            
             <div class="mainContainer slide">
                 <div class="heroText">
                     <span style="font-size: 25px; font-weight: 600">Experience the easiest way to pay all your bills</span> <br><br>
@@ -946,7 +956,8 @@ hr{
             </div>
             
         </div>
-        
+        <!--  this span is for navigating to the aboutUs section -->
+        <span id="aboutUs"></span>
         <div class="dots">
             <div class="dot active"></div>
             <div class="dot"></div>
@@ -957,14 +968,12 @@ hr{
             <button class="nav-button" id="nextBtn">&#10095;</button>
         </div>
     </div>
-
-
-
-
+    
+    
     <!-- This is the Introductory Section -->
     <section class="releal">
         <!-- This is the About Section -->
-        <div class="A-container container" id="aboutUs">
+        <div class="A-container container">
             <div class="A-Image">
                 <img src="img/about us 2.jpg" alt="">
             </div>
@@ -974,15 +983,16 @@ hr{
                     At Gosub.ng, we offer a comprehensive solution for affordable data plans, airtime recharge, bills payment, and airtime-to-cash conversion. Our secure, automated platform guarantees a seamless experience for Nigerians. Stay connected with ease at Gosub.ng!
                 </p>
             </div>
+            <!--  this span is for navigating to the aboutUs section -->
+            <span id="services"></span>
         </div>
         
     </section>
 
     <section class="reveal">
         <!-- This is the Our Services Section -->
-    
         <div class="O-container container" >
-            <h2 id="services">Our Services</h2>
+            <h2>Our Services</h2>
             <div class="O-cards reveal">
                 <div class="o-card">
                     <div class="O-icon" >
@@ -1094,21 +1104,23 @@ hr{
         <div class="Q-container reveal">
             <div class="Q-card ">
                 <h3 style="color: #FB470D">Affordable Data Plans</h3>
-                <p style="margin: 10px 0">Gosub.ng is committed to offering the best value for your money. Our data plans are designed to provide more data at lower prices, ensuring you stay connected affordably, no matter your budget.</p>
+                <p>Gosub.ng is committed to offering the best value for your money. Our data plans are designed to provide more data at lower prices, ensuring you stay connected affordably, no matter your budget.</p>
             </div>
             <div class="Q-card "  >
                 <h3 style="color: #FB470D">Security & Trustworthiness</h3>
-                <p style="margin: 10px 0">With over 5 years in business, gosub.ng is “no-panic zone.” We ensure secure transactions with top-tier encryption, giving you complete peace of mind while using our services.</p>
+                <p>With over 5 years in business, gosub.ng is “no-panic zone.” We ensure secure transactions with top-tier encryption, giving you complete peace of mind while using our services.</p>
             </div>
+            <!--  this span is for navigating to the testimonies section -->
+            <span id="testimonies"></span>
             <div class="Q-card">
                 <h3 style="color: #FB470D">Reliable Customer Support</h3>
-                <p style="margin: 10px 0">At gosub.ng, we prioritize your satisfaction with prompt, accessible customer service. Our team is always ready to assist you, ensuring a seamless experience and building lasting trust and loyalty.</p>
+                <p>At gosub.ng, we prioritize your satisfaction with prompt, accessible customer service. Our team is always ready to assist you, ensuring a seamless experience and building lasting trust and loyalty.</p>
             </div>
         </div>
     </section>
 
     <section class="reveal">
-        <h2 style="text-align: center; padding: 30px 0px 0px 0px; margin-top: 50px;" id="testimonies">Testimonies</h2>
+        <h2 style="text-align: center; padding: 30px 0px 0px 0px; margin-top: 50px;">Testimonies</h2>
         <div class="wrapper">
             <i id="left" class="fa-solid fa-angle-left">
                 <svg xmlns="http://www.w3.org/2000/svg" height="20" width="12.5" viewBox="0 0 320 512" ><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -1270,9 +1282,6 @@ hr{
             <div class="F-newsLetter" style="margin-top: 20px;">
                 <div style="display: grid; justify-items: left; align-items: center;margin-top: 10px; margin-bottom: 10px;">
                     <img src="footer logo.png" alt="" style="width: 180px;">
-                    <img src="footer logo2.png" alt="" style="width: 180px;">
-                    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="30px" height="30px"; class="logo"><path fill="#fff"  d="M36,1.74V0H17.65A18,18,0,1,0,32.81,7.84,7.41,7.41,0,0,0,36,1.74ZM18,26.67A8.67,8.67,0,1,1,26.63,18,8.67,8.67,0,0,1,18,26.67Z"/><ellipse fill="#fff" cx="17.97" cy="18" rx="3.8" ry="3.81"/></svg>
-                    <span style="font-size:30px; font-weight: 500px; margin: 10px;">Gosub.ng</span> -->
                 </div>
                 <input type="text" placeholder="Subscribe to our newsletter"><br>
                 <a href="#"><button style="margin-top: 10px; background-color: #f26522;">Subscribe</button></a>
