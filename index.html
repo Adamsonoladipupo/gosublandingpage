@@ -219,8 +219,8 @@ a {
     align-items: center;
 }
 .dot {
-    width: 15px;
-    height: 15px;
+    width: 12px;
+    height: 12px;
     margin: 0 6px;
     border-radius: 20px;
     background: #757575;
@@ -1366,42 +1366,42 @@ hr{
         let autoSlideInterval;
         const autoSlideDuration = 5000; // Auto-slide every 5 seconds
         const pauseDuration = 10000; // Pause for 10 seconds after user interaction
-    
+
         function showSlide(index) {
             slides.style.transform = `translateX(${-index * 100}%)`;
             dots.forEach((dot, i) => {
                 dot.classList.toggle('active', i === index);
             });
         }
-    
+
         function startAutoSlide() {
             autoSlideInterval = setInterval(() => {
                 currentIndex = (currentIndex === dots.length - 1) ? 0 : currentIndex + 1;
                 showSlide(currentIndex);
             }, autoSlideDuration);
         }
-    
+
         function stopAutoSlide() {
             clearInterval(autoSlideInterval);
         }
-    
+
         function resetAutoSlide() {
             stopAutoSlide();
             setTimeout(startAutoSlide, pauseDuration); // Restart auto-slide after the pause
         }
-    
+
         document.getElementById('prevBtn').addEventListener('click', () => {
             currentIndex = (currentIndex === 0) ? dots.length - 1 : currentIndex - 1;
             showSlide(currentIndex);
             resetAutoSlide(); // Reset auto-slide on user interaction
         });
-    
+
         document.getElementById('nextBtn').addEventListener('click', () => {
             currentIndex = (currentIndex === dots.length - 1) ? 0 : currentIndex + 1;
             showSlide(currentIndex);
             resetAutoSlide(); // Reset auto-slide on user interaction
         });
-    
+
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 currentIndex = index;
@@ -1409,18 +1409,10 @@ hr{
                 resetAutoSlide(); // Reset auto-slide on user interaction
             });
         });
-    
-        // Pausing auto-slide when user tap-and-hold (or clicks and holds)
-        slides.addEventListener('mousedown', stopAutoSlide);   // For desktop (mouse hold)
-        slides.addEventListener('mouseup', resetAutoSlide);     // Resume on release
-        slides.addEventListener('mouseleave', resetAutoSlide);  // Resume if mouse leaves slide while holding
-    
-        slides.addEventListener('touchstart', stopAutoSlide);   // For mobile (tap-and-hold)
-        slides.addEventListener('touchend', resetAutoSlide);    // Resume on release
-    
+
         // Initial auto-slide start
         startAutoSlide();
-    
+
     </script>
     
     
