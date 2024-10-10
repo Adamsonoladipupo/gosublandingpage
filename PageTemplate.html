@@ -12,15 +12,18 @@
         
 /* Quick note: A = About, A-container = About container, O = Our Service, AC = Achievement, AQ = Qualification  */
 /* ------------- Variables ----------------------- */
+
 :root {
     --pry-color: #FB470D;
     --main-bg-color: #F1F1F2;
     --button-hover: #eb3b00;
 
 }
+
 /* ----------------------------------------------- */
 /* ------------- Universal Styling ----------------*/
 /* ----------------------------------------------- */
+
 * {
     margin: 0;
     padding: 0;
@@ -31,12 +34,11 @@
 }
 
 .header{
-    background-color: var(--main-bg-color);
+    background-color: #fff;
     height: 60px;
     top: 0;
     position: sticky;
     z-index: 5;
-    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
     margin-bottom: 10px;
 }
 
@@ -67,7 +69,7 @@ button:hover{
 }
 
 body{
-    background-image: url(bg16d.svg);
+    background-color: #fff;
 }
 
 /* -----------Styling Header --------------- */
@@ -89,7 +91,7 @@ body{
     cursor: pointer;
 }
 .navbar {
-    background-color: var(--main-bg-color);
+    background-color: #fff;
     display: flex;
     height: 60px;
     justify-content: space-between;
@@ -106,6 +108,7 @@ a {
     position: fixed;
     left: 100%;
     top: 50px;
+    /* flex-direction: column; */
     align-items:start ;
     background-color: var(--main-bg-color);
     width: 100%;
@@ -137,6 +140,7 @@ a {
     padding: 10px;
     display: block;
     color: #fff;
+    
 }
 .button:hover{
     background-color: var(--button-hover);
@@ -154,43 +158,41 @@ a {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-.nav-buttons {
-    position: absolute;
-    top: 50%;
-    width: 100%;
+/* -----------Styling Introduction section-------- */
+
+.A-container{
+    padding: 20px;
     display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
+    align-items: center;
+    justify-content: center;
 }
-.nav-buttons{
+.A-Image img{
     display: none;
 }
-.nav-button {
-    background: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    color: #000;
-    font-size: 1em;
-    cursor: pointer;
-    padding: 5px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
-}
-.nav-buttons button:hover{
-    background-color: white;
-    color: #000;
-}
-/* -------------- Page Content ---------- */
-.pageContent{
-    margin: 20px;
-}
+
 /* --------------Styling Footer section ---------- */
 
+.footerCurveEdge{
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+}
+.footer:before{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin-top: -140px;
+    content: '';
+    z-index: 1;
+    left: 0;
+    background-color: #fff;
+    border-bottom-left-radius: 100px;
+}
 .footer{
     background-color: #000000;
     color: #ffffff;
     padding: 40px;
+    border-top-right-radius: 100px;
     
 }
 .footer h4{
@@ -200,14 +202,19 @@ a {
     
 }
 .FooterLinks{
-    display: block;
+    display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+.FooterLinks h2{
+    color: #fff;
+    font-size: 30px;
+    font-weight: lighter;
 }
 .footer p{
     color: #ffffff;
-    margin-bottom: 5px;
-    
+    margin-bottom: 05px;
+    font-weight: lighter;
 }
 .footer a{
     color: #ffffff;
@@ -227,7 +234,9 @@ hr{
     
     color: #ffffff;
 }
-
+.F-newsLetter{
+    margin-right: 15px;
+}
 .F-newsLetter input{
     width: 100%;
     padding: 12px;
@@ -235,7 +244,8 @@ hr{
     border-radius: 5px;
     outline: none;
     color: black;
-    font-size: 1em;
+    font-size: 0.9rem;
+    margin-right: 20px;
 }
 .subFooterLink{
     display: flex;
@@ -249,7 +259,9 @@ hr{
 .belowHr div{
     margin-top: 20px;
 }
-
+.copyright{
+    font-weight: lighter;
+}
 /* ----------------------------------------------- */
 /* ---------------- Tablet Styling ----------------*/
 /* ----------------------------------------------- */
@@ -279,53 +291,49 @@ hr{
         .nav-link:hover{
             color: var(--button-hover);
         }
+        .mainContainer{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            text-align: start;
+        }
+        .footer{
+            padding: 40px;
+        }
         .button{
                 display: none;
         }
-
+        .hr{
+            padding: 20px 30px 20px 30px;
+        }
         .FooterLinks{
             display: flex;
             flex-wrap: wrap;
             justify-content:space-between;
+            margin: 0 30px 20px 30px;
         }
         .belowHr{
             text-align: center; 
             display: flex; 
             justify-content: space-between;
+            margin: 0 30px;
         }
         .belowHr div{
             margin-top: 0px;
         }
-        .wrapper i {
-            display: block;
-        }
-        /* -------------- Page Content ---------- */
-        .pageContent{
-            margin: 70px;
-        }
+
 }
+
 @media (min-width: 900px){
-    .AC-counter{
-        display: flex;
-        justify-content: space-around;
-    }
+
+
 }
 
+/* ----------------------------------------------- */
 /* ---------------- Laptop Styling ----------------*/
-
+/* ----------------------------------------------- */
 @media ( min-width: 1000px) {
-        .wrapper .carousel {
-            grid-auto-columns: calc((100% / 3) - 12px);
-        }
-        .wrapper {
-            padding: 50px;
-        }
-        .wrapper i:first-child{
-            left: 20px;
-        }
-        .wrapper i:last-child{
-            right: 20px;
-        }
+
 }
     </style>
     <title>Document</title>
@@ -335,12 +343,12 @@ hr{
         <nav class="navbar">
             <a href="index.html"><img src="logo.svg" alt="logo" width="30px" class="logo">
             <ul class="nav-menu">
-                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Install App</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Product</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Testimonies</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">FAQ</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Contect</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
                 <li class="nav-item"><a href="https://gosub.ng/login" class="nav-link">Log in</a></li>
                 <a href="https://gosub.ng/register" class="nav-link button">Get Started</a>
             </ul>
@@ -352,75 +360,52 @@ hr{
         </nav>
     </header>
 
-    <section class="pageContent">
-        <h1>Page Content Goes Here</h1>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi, eligendi magnam illum fugiat molestias quo sunt dolore, voluptates, perspiciatis consectetur doloremque placeat alias cumque facilis temporibus nam esse architecto voluptas!
-        Ipsam, enim officiis quis, ipsum suscipit laudantium veniam dolorem explicabo, nobis beatae blanditiis delectus necessitatibus. Consequuntur, minima? Laboriosam, possimus, repellat pariatur neque tempore enim ratione dolor harum corporis nostrum minus!
-        Dolores eveniet, accusantium consectetur impedit ipsum sapiente explicabo magnam voluptate itaque aspernatur at laboriosam quas, quam odit! Unde labore impedit modi quidem voluptas. Exercitationem aspernatur fuga, repudiandae natus architecto non!
-        Earum nam consequuntur nesciunt veritatis deleniti explicabo laborum animi! Ad ea officia facere totam voluptate voluptatibus harum repudiandae, tempore nulla natus excepturi qui sunt. Laborum praesentium veritatis est voluptate officiis!
-        Inventore consequatur animi dolorum iure at fugiat laudantium quos officiis non esse voluptas nihil nesciunt, velit expedita corporis et voluptates quibusdam molestias in! Laborum beatae, dolorum maiores quam voluptatibus facere.
-        Odit assumenda cumque ratione culpa, iusto eaque rem explicabo fugiat! Tempore debitis nisi numquam vero voluptate voluptas ipsum aliquam, eos repudiandae vel, doloremque repellendus. Quaerat distinctio at consectetur eos porro?
-        Enim saepe quisquam eos tenetur ducimus nisi nostrum, rem cumque dolor natus sit labore neque explicabo aut ut minus dolorum temporibus, sequi ullam fugit nam, culpa nemo rerum. Delectus, vero.
-        Quis molestias ad dolorem sit aspernatur incidunt eligendi at quia provident pariatur ipsam, recusandae ex maxime sint, soluta eaque neque hic accusamus omnis laudantium? Exercitationem error itaque quaerat placeat inventore.
-        Tempora nesciunt rem illum nemo perferendis consequatur. Voluptate reprehenderit assumenda eos. Quidem sunt voluptate, nihil soluta placeat laboriosam ullam ratione quo illo dignissimos maiores corrupti, obcaecati minus! Explicabo, doloremque provident.
-        Dolorem excepturi magnam hic repudiandae veritatis blanditiis nihil, dolore autem voluptatibus nostrum alias in dolor architecto, voluptate repellendus modi ipsam dignissimos quas? Repellat, quae ex perspiciatis adipisci consequatur dolorum. Et?</p>
-    </section>
 
 
-
-
-
-    <div class="footer">
+    <!-- This is the Footer Section of the page -->
+    <div class="footerCurveEdge"></div> 
+    <div class="footer" id="contact">
         <div class="FooterLinks">
+
+            
             <div class="F-newsLetter" style="margin-top: 20px;">
-                <div>
-                    <img src="logo #fff.png" alt="">
-                    <h2>Gosub.ng</h2>
+                <div style="display: grid; justify-items: left; align-items: center;margin-top: 10px; margin-bottom: 10px;">
+                    <img src="footer logo.png" alt="" style="width: 180px;">
                 </div>
-                <p>Subscribe to our newsletter </p>
-                <input type="text" placeholder="coming soon"><br>
+                <input type="text" placeholder="Subscribe to our newsletter"><br>
                 <a href="#"><button style="margin-top: 10px; background-color: #f26522;">Subscribe</button></a>
             </div>
-                <div class="F-helpLink">
-                    <h4>Help Links</h4>
-                    <p><a href="#">FAQ</a></p>
-                    <p><a href="#">Tutorials</a></p>
-                    <p><a href="#">Terms and Conditions</a></p>
-                    <p><a href="#">Support</a></p>
-                    <p><a href="#">Customer Care </a></p>
-                </div>
-                
-                <div class="F-information">
-                    <h4>Information </h4>
-                    <p><a href="#">Blog</a></p>
-                    <p><a href="#">About</a></p>
-                    <p><a href="#">Pricing</a></p>
-                    <p><a href="#">Services</a></p>
-                    <p><a href="#">Partner</a></p>
-                    <p><a href="#">Products</a></p>
-                </div>
-    
-                <div class="F-contact">
-                    <h4>Contact</h4>
-                    <div style="color: #ffffff;">
-                        <div style="display: flex; align-items: center;">
-                            <svg width="15" viewBox="0 0 512 512"><path fill="#ffffff" d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
-                            <p style="padding-left: 10px;">09064172909</p>
-                        </div>
-                        
-                        <div style="display: flex; align-items: center;">
-                            <svg width="15" viewBox="0 0 512 512"><path fill="#ffffff" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg> 
-                            <p style="padding-left: 10px;">contact@gosub.ng</p>
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <svg width="15" viewBox="0 0 384 512"><path fill="#ffffff" d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
-                            <p style="padding-left: 10px;">Nigeria</p>
-                        </div>
+            
+            
+            <div class="F-helpLink">
+                <h4>Help Links</h4>
+                <p><a href="#">FAQs</a></p>
+                <p><a href="#">Tutorials</a></p>
+                <p><a href="#">Terms & Conditions</a></p>
+                <p><a href="#">Blog</a></p>
+            </div>
+            <div class="F-contact">
+                <h4>Contact</h4>
+                <div style="color: #ffffff;">
+                    <div style="display: flex; align-items: center;">
+                        <svg width="15" viewBox="0 0 512 512"><path fill="#ffffff" d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+                        <p style="padding-left: 10px;">09064172909</p>
                     </div>
                     
+                    <div style="display: flex; align-items: center;">
+                        <svg width="15" viewBox="0 0 512 512"><path fill="#ffffff" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg> 
+                        <p style="padding-left: 10px;">contact@gosub.ng</p>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <svg width="15" viewBox="0 0 384 512"><path fill="#ffffff" d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+                        <p style="padding-left: 10px;">Nigeria</p>
+                    </div>
                 </div>
+            </div>   
         </div>
+
     <div class="footerHR">
+        
         <div class="hr">
             <hr>
         </div>
@@ -436,9 +421,10 @@ hr{
             </div>
         </div>
     </div>
+
 </body>
 
-<!-- Script for controlling the the hamburger menu  -->
+
 <script>
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
