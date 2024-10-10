@@ -39,7 +39,6 @@
     top: 0;
     position: sticky;
     z-index: 5;
-    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
     margin-bottom: 10px;
 }
 
@@ -210,6 +209,9 @@ a {
             background-color: #f1f1f1;
             color: #5c5c5c;
             
+        }
+        .faq-answer li{
+            list-style: inside;
         }
         .faq-answer.open {
             max-height: 500px;
@@ -437,10 +439,35 @@ hr{
         <div class="FAQsImage ">
             <img src="image/Question Mark.png" alt="">
         </div>
-        
     </div>
 
     <section class="FAQs">
+        
+        <div class="Q&A">
+            <div class="faq-title" onclick="toggleAnswer(this)">
+                What can I do with gosub.ng?
+                <span>
+                    <svg class="arrow down" width="25px"  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+            </div>
+            <div class="faq-answer">
+                <p>After you have successfully funded your wallet, the next thing you may want to do is to start buying our products or subscribing to our services. We have a range of products and services available on gosub.ng:</p>
+                <br>
+                <ul>
+                    <li>Airtime top-up</li>
+                    <li>Data plan subscription</li>
+                    <li>Convert airtime to cash</li>
+                    <li>Electricity bills payment</li>
+                    <li>Cable TV subscription</li>
+                </ul>
+                
+                <br>
+                <p>You can buy or subscribe to any of the above products and services at a discount rate.</p>
+                <p>If you are not yet a registered member of gosub.ng, click on <a href="https://gosub.ng/register">register</a> to get started or <a href="https://gosub.ng/login">login</a> if you are already registered.</p>
+            </div>
+        </div>
 
         <div class="Q&A">
             <div class="faq-title" onclick="toggleAnswer(this)">
@@ -460,6 +487,19 @@ hr{
             </div>
         </div>
         
+        <div class="Q&A">
+            <div class="faq-title" onclick="toggleAnswer(this)">
+                After Registration what's next?
+                <span>
+                    <svg class="arrow down" width="25px"  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+            </div>
+            <div class="faq-answer">
+                <p>The next step after registration is to <strong>fund your wallet</strong> .</p>
+            </div>
+        </div>
 
         <div class="Q&A">
             <div class="faq-title" onclick="toggleAnswer(this)">
@@ -537,72 +577,16 @@ hr{
                 </span>
             </div>
             <div class="faq-answer">
-                <p>To change your Gosub.ng PIN, Log in to your gosub.ng account, then click on the menu button at the top left of the page. <br>
-                Click on settings <br>
-                Under Settings, click on manage PIN <br>
-                Click on forgot pin <br>
-                Use the token sent to your email to change your PIN</p>
+                <p>To change your Gosub.ng PIN, Log in to your gosub.ng account, then click on the menu button at the top left of the page.</p>
+                <ul>
+                    <li>Click on settings</li>
+                    <li>Under Settings, click on manage PIN</li>
+                    <li>Click on forgot pin</li>
+                    <li>Use the token sent to your email to change your PIN</li>
+                </ul>
             </div>
         </div>
-        
 
-        <div class="Q&A">
-            <div class="faq-title" onclick="toggleAnswer(this)">
-                How do I start?
-                <span>
-                    <svg class="arrow down" width="25px"  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </span>
-            </div>
-            <div class="faq-answer">
-                <p></p>
-            </div>
-        </div>
-        
-
-
-
-
-
-
-        <div class="Q&A">
-            <div class="faq-title" onclick="toggleAnswer(this)">
-                After Registration what's next?
-                <span>
-                    <svg class="arrow down" width="25px"  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </span>
-            </div>
-            <div class="faq-answer">
-                <p>The next step after registration is to <strong>fund your wallet</strong> .</p>
-            </div>
-        </div>
-        <div class="Q&A">
-            <div class="faq-title" onclick="toggleAnswer(this)">
-                What can I do with gosub.ng?
-                <span>
-                    <svg class="arrow down" width="25px"  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </span>
-            </div>
-            <div class="faq-answer">
-                <p>After you have successfully funded your wallet, the next thing you may want to do is to start buying our products or subscribing to our services. We have a range of products and services available on gosub.ng:</p>
-                <br>
-                <ol>
-                    <li>Airtime top-up</li>
-                    <li>Data plan subscription</li>
-                    <li>Convert airtime to cash</li>
-                    <li>Electricity bills payment</li>
-                    <li>Cable TV subscription</li>
-                </ol>
-                <br>
-                <p>You can buy or subscribe to any of the above products and services at a discount rate.</p>
-                <p>If you are not yet a registered member of gosub.ng, click on <a href="https://gosub.ng/register">register</a> to get started or <a href="https://gosub.ng/login">login</a> if you are already registered.</p>
-            </div>
-        </div>
         <div class="Q&A">
             <div class="faq-title" onclick="toggleAnswer(this)">
                 How do I fund my wallet: ATM Card or Cardless Bank transaction?
