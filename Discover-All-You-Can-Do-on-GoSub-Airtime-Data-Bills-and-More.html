@@ -157,9 +157,10 @@ a {
     -webkit-transform: translateY(-8px) rotate(-45deg);
     transform: translateY(-8px) rotate(-45deg);
 }
+
 /* -----------Styling Introduction section-------- */
 
-/* .A-container{
+.A-container{
     padding: 20px;
     display: flex;
     align-items: center;
@@ -167,73 +168,59 @@ a {
 }
 .A-Image img{
     display: none;
-} */
-/* This is for styling the Blog page content */
-.blog{
-    margin: 15px;
 }
-    .blogHeader{
-        margin: 15px 0px;
-        background: url(image/networkMass.png) ;
-        background-color: var(--pry-color);
-        border-radius: 5px;
-        color: #fff;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: 120px;
-    }
-    .BgImage{
-        position: fixed;
-        width: 50%;
-    }
-    .blogHeaderItems{
-        padding: 20px;
-    }
-    .blogHeaderItems p{
-        margin: 10px 0px;
-    }
-    .blogHeader input{
-        width: 100%;
-        max-width: 210px;
-        padding: 12px;
-        border: 1px solid var(--pry-color);
-        border-radius: 5px;
-        outline: none;
-        color: black;
-        font-size: 0.9rem;
-        margin-right: 20px;
-    }
-    .blogArticles{
-        margin: 15px 0px;
-    }
-    .blogArticles a{
-        color: #000;
-        font-size: 18px;
-        font-weight: bold;
-    }
-    .tag{
-        color: var(--button-hover);
-        font-size: 16px;
-    }
-    .date{
-        color: #4d4d4d;
-        font-size: 14px;
-    }
-    .blogItems{
-        display: block;
-    }
-    .blogArticlesItems{
-        display: block;
-        margin: 12px 0px 20px 0px;
-    }
-    .blogArticlesItems div{
-        margin: 0px;
-    }
-    .blogArticlesItems img{
-        width: 100%;
-        border-radius: 5px;
-    }
 
+/* ---------------- blogPost/ page content ----------------*/
+        
+.pageContent{
+            margin: 15px;
+        }
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #2c2c2c;
+        }
+
+        h2 {
+            color: var(--button-hover);
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .blogPostImage{
+            width: 100%;
+            height: 170px;
+            background-image: url(image/blogimage1.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: center;
+            border-radius: 15px;
+        }
+        .author-info {
+            display: block;
+            gap: 10px;
+            margin: 30px 0px;
+        }
+        .author-info img{
+            width: 40px; 
+            height: 40px; 
+            border-radius: 50%;  
+            margin-right: 10px;
+        }
+        .author-info p{
+            font-size: 13px;
+        }
+        h1{
+            font-size: 22px;
+            letter-spacing: px;
+            font-weight: 00;
+            line-height: 1.2;
+            color: #1d1d1d;
+            margin: 20px 0px;
+        }
+        .shareArticle hr{
+            border-bottom: #ffffff;
+            border-color: #525252;
+        }
 
 
 /* --------------Styling Footer section ---------- */
@@ -365,26 +352,31 @@ hr{
         }
 
 
-                /* This is for styling the Blog page content */
-                .blog{
-            margin: 20px 100px;
+                /* -------------- Page Content/ blog post ---------- */
+
+                .pageContent{
+            margin: 30px 100px ;
         }
-        .blogHeader{
-            background-position: 250px;
-    }
-        .blogHeaderItems{
-            padding: 50px;
+        .blogPostImage{
+            height: 200px;
         }
-        .blogArticlesItems{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        h1{
+            font-size: 26px;
+            letter-spacing: px;
+            font-weight: 00;
+            line-height: 1.2;
         }
-        .blogArticlesItems div{
-            margin: 0px 15px;
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #2c2c2c;
         }
-        .blogArticlesItems img{
-        width: 350px;
+        h2 {
+            font-size: 18px;
+        }
+        .author-info {
+            display: flex;
+            gap: 20px;
         }
 
 
@@ -416,25 +408,10 @@ hr{
 }
 
 @media (min-width: 900px){
-    /* This is for styling the Blog page content */
-    .blog{
-                margin: 20px 70px;
-            }
-            .blogHeader{
-                background-size: 50%;
-                background-position: 700px;
+    .blogPostImage{
+            height: 350px;
+
         }
-        .blogHeaderItems{
-            padding: 70px 50px;
-        }
-        .blogArticlesItems img{
-            width: 250px;
-            }
-        .blogItems{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            }
 
 }
 
@@ -445,7 +422,7 @@ hr{
 
 }
     </style>
-    <title>Document</title>
+    <title>Discover All You Can Do on GoSub: Airtime, Data, Bills, and More!</title>
 </head>
 <body>
     <header class="header">
@@ -468,44 +445,66 @@ hr{
             </div>
         </nav>
     </header>
+    <!-- This is the section for blog post content -->
+    <section class="blog pageContent">
+        <div class="blogPostImage">
+            
+        </div>
+        <h1>Discover All You Can Do on GoSub: Airtime, Data, Bills, and More!</h1>
+        <p>Hey there!</p>
+        <p>Are you a new or existing subscriber wondering what exactly you can do on GoSub? Well, this blog post is for you. Welcome to the tribe once again!</p>
 
-        <!-- This section contains the Blog page contents -->
-        <section class="blog">
-            <div class="blogHeader">
-                <div class="blogHeaderItems">
-                    <h2>Gosub Blog</h2>
-                    <p>Learn more about how to convert your airtime to cash and other services</p>
-                    <input type="text" placeholder="Subscribe to our newsletter"><br>
-                    <a href="#"><button style="margin-top: 10px; border: 1px solid #fff;">Subscribe</button></a>
+        
+        <p>On GoSub, you can do almost everything that involves buying or selling airtime and data, including:</p>
+        <h2>1. Buy & Sell Airtime and Data</h2>
+        <p>Whether you are an MTN, Airtel, GLO, or 9Mobile subscriber, GoSub makes it easy for you to buy and sell airtime at the best rates. Our platform ensures you get the value you deserve without breaking the bank.</p>
+        <h2>2. Convert Airtime to Cash</h2>
+        <p>Have excess airtime you don't need? Convert it to cash quickly and conveniently with GoSub. Our conversion rates are unbeatable, ensuring you get the most out of your airtime.</p>
+        <h2>3. Become a GoSub Reseller</h2>
+        <p>Looking to make some extra income? Become a GoSub agent by reselling airtime or data. Data plan reselling means buying data plans at a cheaper rate, and then selling to others at a higher rate than what you used to buy. It's a fantastic opportunity to earn while providing a valuable service to your community.</p>
+        <h2>4. Pay Electricity Bills</h2>
+        <p>With GoSub, you can easily settle your electricity bills right from the comfort of your home. We support payments for major electricity providers across Nigeria, ensuring that your power stays on without stress.</p>
+        <h2>5. Cable TV Subscription</h2>
+        <p>Keep your favourite shows going with seamless cable TV subscription payments. Whether it’s DSTV, GOTV, or Startimes, you can recharge your account in just a few clicks using GoSub.</p>
+        <br>
+        <p>In addition to these core services, GoSub is constantly innovating to provide more value to our users. We are committed to making airtime, data, electricity, and cable TV transactions as smooth and affordable as possible.</p>
+        <br>
+        <p>We offer the best rates you can find in the market. Plus, our payout process is incredibly fast, ensuring you get your money instantly. Trade your airtime with us this weekend for unbelievable rates and instant payment.</p>
+        <br>
+        <p>Our platform is designed to be seamless and user-friendly, making it easy to manage your airtime, data, and other utility needs on the go.</p>
+        <br>
+        <p>Our Customer Support team is active 24/7 to assist you. Whether you need help with a transaction or have inquiries about our services, we are here to help.</p>
+        <br>
+        <p>We look forward to serving you and helping you make the most out of your airtime, data, electricity, and cable TV subscriptions. If you haven’t already, install our app and start exploring all the fantastic features we offer.</p>
+        
+        <div class="author-info">
+            <div class="author" style="display: flex;  align-items: center; margin-top: 20px;">
+                    <img src="image/author.jpg" alt="">
+                <div>
+                    <p >Author: Evidence Ebie</p>
+                    <p style="font-style: italic;">Customer Service Representative</p>
                 </div>
             </div>
-    
-            <div class="blogArticles">
-                <div class="blogItems">
-                    <div class="blogArticlesItems">
-                        <a href="Discover-All-You-Can-Do-on-GoSub-Airtime-Data-Bills-and-More.html"><img src="image/blogimage1.png" alt="image"></a>
-                        <div>
-                            <p class="tag">Article</p>
-                            <a href="Discover-All-You-Can-Do-on-GoSub-Airtime-Data-Bills-and-More.html">Discover All You Can Do on GoSub: Airtime, Data, Bills, and More!</a>
-                            <p class="date">16th Oct, 2024</p>
-                        </div>
-                    </div>
-                    <div class="blogArticlesItems">
-                        <a href="blogpost.html"><img src="image/blogimage.png" alt="image"></a>
-                        <div>
-                            <p class="tag">Article</p>
-                            <a href="blogpost.html">Learn more about how to 
-                            convert your</a>
-                            <p class="date">23 june, 2024</p>
-                        </div>
-                    </div>
+            <div class="author" style="display: flex;  align-items: center; margin-top: 20px;">
+                    <img src="image/author.jpg" alt="">
+                <div>
+                    <p>Editor: Kelvin Iyiriaro</p>
+                    <p style="font-style: italic;">Head of Product</p>
                 </div>
-                
             </div>
-    
-            <a href="#" style="display: flex; align-items: center; justify-content: center;"><button style="margin-top: 10px; ">Show More!</button></a>
-        </section>
+        </div>
 
+        <div class="shareArticle" style="margin-top: 10px ;">
+            <hr>
+            <p style="margin: 10px;">Share Article</p>
+            <div style="margin: 10px;">
+                <a href="#" id="linkedin-share" target="_blank"><svg  width="20" viewBox="0 0 448 512" style="margin-right: 10px;"><path fill="#000" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a>
+                <a href="#" id="twitter-share" target="_blank"><svg width="20" viewBox="0 0 448 512" style="margin-right: 10px;"><path fill="#000" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm297.1 84L257.3 234.6 379.4 396H283.8L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5L313.6 116h47.5zM323.3 367.6L153.4 142.9H125.1L296.9 367.6h26.3z"/></svg></a>
+                <a href="#" id="facebook-share" target="_blank"><svg width="20" viewBox="0 0 448 512" style="margin-right: 10px;"><path fill="#000" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64h98.2V334.2H109.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H255V480H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"/></svg></a>
+            </div>
+
+        </div>
+    </section>
 
     <!-- This is the Footer Section of the page -->
     <div class="footerCurveEdge"></div> 
