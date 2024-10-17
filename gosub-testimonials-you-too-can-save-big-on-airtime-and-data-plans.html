@@ -15,7 +15,6 @@
 
 :root {
     --pry-color: #FB470D;
-    --pry-colorDark: #1f0901;
     --main-bg-color: #fff;
     --button-hover: #e23900;
 
@@ -158,9 +157,10 @@ a {
     -webkit-transform: translateY(-8px) rotate(-45deg);
     transform: translateY(-8px) rotate(-45deg);
 }
+
 /* -----------Styling Introduction section-------- */
 
-/* .A-container{
+.A-container{
     padding: 20px;
     display: flex;
     align-items: center;
@@ -168,78 +168,68 @@ a {
 }
 .A-Image img{
     display: none;
-} */
-/* This is for styling the Blog page content */
-.blog{
-    margin: 15px;
 }
-    .blogHeader{
-        margin: 15px 0px;
-        background: url(image/networkMass.png) ;
-        background-color: var(--pry-color);
-        border-radius: 5px;
-        color: #fff;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: 120px;
-    }
-    .BgImage{
-        position: fixed;
-        width: 50%;
-    }
-    .blogHeaderItems{
-        padding: 20px;
-    }
-    .blogHeaderItems p{
-        margin: 10px 0px;
-    }
-    .blogHeader input{
-        width: 100%;
-        max-width: 210px;
-        padding: 12px;
-        border: 1px solid var(--pry-color);
-        border-radius: 5px;
-        outline: none;
-        color: black;
-        font-size: 0.9rem;
-        margin-right: 20px;
-    }
-    .blogArticles{
-        margin: 15px 0px;
-    }
-    .blogArticles a{
-        color: var(--pry-colorDark);
-        font-size: 16px;
-        font-weight: bold;
-    }
-    .blogArticles a:hover{
-        color: var(--pry-color);
-    }
-    .tag{
-        color: var(--button-hover);
-        font-size: 16px;
-    }
-    .date{
-        color: #4d4d4d;
-        font-size: 14px;
-    }
-    .blogItems{
-        display: block;
-    }
-    .blogArticlesItems{
-        display: block;
-        margin: 12px 0px 20px 0px;
-    }
-    .blogArticlesItems div{
-        margin: 0px;
-    }
-    .blogArticlesItems img{
-        width: 100%;
-        border-radius: 10px;
-        transition: 0.71s ease;
-    }
 
+/* ---------------- blogPost/ page content ----------------*/
+        
+.pageContent{
+            margin: 15px;
+        }
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #2c2c2c;
+        }
 
+        h2 {
+            color: var(--button-hover);
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .blogPostImage{
+            width: 100%;
+            height: 170px;
+            background-image: url(image/blogimage4.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: center;
+            border-radius: 15px;
+        }
+        .comments{
+            color: #4d4d4d;
+        }
+        .author-info {
+            display: block;
+            gap: 10px;
+            margin: 30px 0px;
+        }
+        .author-info img{
+            width: 40px; 
+            height: 40px; 
+            border-radius: 50%;  
+            margin-right: 10px;
+        }
+        .author-info p{
+            font-size: 13px;
+        }
+        h1{
+            font-size: 22px;
+            letter-spacing: px;
+            font-weight: 00;
+            line-height: 1.2;
+            color: #1d1d1d;
+            margin: 20px 0px;
+        }
+        .shareArticle hr{
+            border-bottom: #ffffff;
+            border-color: #525252;
+        }
+        .all-caps{
+            text-transform: uppercase;
+        }
+        .blog li{
+            list-style: disc;
+        }
 
 
 /* --------------Styling Footer section ---------- */
@@ -371,26 +361,31 @@ hr{
         }
 
 
-                /* This is for styling the Blog page content */
-                .blog{
-            margin: 20px 100px;
+                /* -------------- Page Content/ blog post ---------- */
+
+                .pageContent{
+            margin: 30px 100px ;
         }
-        .blogHeader{
-            background-position: 250px;
-    }
-        .blogHeaderItems{
-            padding: 50px;
+        .blogPostImage{
+            height: 200px;
         }
-        .blogArticlesItems{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        h1{
+            font-size: 26px;
+            letter-spacing: px;
+            font-weight: 00;
+            line-height: 1.2;
         }
-        .blogArticlesItems div{
-            margin: 0px 15px;
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #2c2c2c;
         }
-        .blogArticlesItems img{
-        width: 350px;
+        h2 {
+            font-size: 18px;
+        }
+        .author-info {
+            display: flex;
+            gap: 20px;
         }
 
 
@@ -422,30 +417,9 @@ hr{
 }
 
 @media (min-width: 900px){
-    /* This is for styling the Blog page content */
-    .blog{
-                margin: 20px 70px;
-            }
-            .blogHeader{
-                background-size: 50%;
-                background-position: 700px;
-        }
-        .blogHeaderItems{
-            padding: 70px 50px;
-        }
-        .blogArticlesItems img{
-            width: 250px;
-            }
-        .blogArticlesItems {
-            width: 600px;
-            }
-        .blogItems{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            }
-            .blogArticlesItems img:hover{
-                width: 270px;
+    .blogPostImage{
+            height: 350px;
+
         }
 
 }
@@ -457,7 +431,7 @@ hr{
 
 }
     </style>
-    <title>Document</title>
+    <title>Why Does My Data Run Out Quickly?</title>
 </head>
 <body>
     <header class="header">
@@ -480,100 +454,73 @@ hr{
             </div>
         </nav>
     </header>
-
-        <!-- This section contains the Blog page contents -->
-        <section class="blog">
-            <div class="blogHeader">
-                <div class="blogHeaderItems">
-                    <h2>Gosub Blog</h2>
-                    <p>Learn more about how to convert your airtime to cash and other services</p>
-                    <input type="text" placeholder="Subscribe to our newsletter"><br>
-                    <a href="#"><button style="margin-top: 10px; border: 1px solid #fff;">Subscribe</button></a>
+    <!-- This is the section for blog post content -->
+    <section class="blog pageContent">
+        <div class="blogPostImage">
+            
+        </div>
+        <h1>Gosub Testimonials: You Too Can Save Big on Airtime and Data Plans!</h1>
+        <p>Hey there,</p>
+        <p>Imagine being able to chat, surf the internet, and stay connected with your loved ones without worrying about expensive airtime bills. Sounds too good to be true, right?</p>
+        <p>At Gosub.ng, we have got all your airtime and data needs covered. We have made this dream a reality for over 100,000 of our customers over the past five years, and we understand that trusting a new service can be daunting, especially when it involves your hard-earned money. That is why we are sharing real stories from people just like you who have saved big with our affordable data and airtime plans. Read on to learn how we have earned their trust and how we can help you too.</p>
+        <ul><h2>Testimonials</h2>
+            <li><p><strong>Onaga Chinaza:</strong></p>
+            <p>"I'm giving you 5 stars+ if it's possible. I discovered this platform two years ago and trusted them with my funds. Ten minutes after I transferred airtime to the number provided, my bank account was credited. Today I did it again, and it was still credited too. Thanks, Gosub, for being trustworthy."
+            </p></li>
+            <li><p><strong>Joseph Lucky:</strong></p>
+                <p>"My first experience with this company was, in one word, ‘amazing.’ Customer care is so fast and calm in response, even when there is a transaction delay. I just saw their advert on YouTube, then I followed."</p>
+            </li>
+            <li><p><strong>Adenike Balogun:</strong></p>
+                <p>"Gosub is very nice, fast, and reliable. I bought 20k airtime instead of 2k from my bank (in this 'sapa' period). I was looking for where to convert it to cash when I came across Gosub. Registration was so easy; it took less than 10 minutes, and I converted the airtime to cash and got paid in less than 5 minutes."</p>
+            </li>
+            <li><p><strong>Favour Nnaoha:</strong></p>
+                <p>"These guys are the best airtime-to-cash app in Africa, with seamless transactions and the best customer care response. I'm short of words, but they are very, very good, operating at a world-class standard."</p>
+            </li>
+            <li><p><strong>Paul Osemudiamen Famous:</strong></p>
+                <p>"Trust me, this is the best app/site for any transaction right now. They are fast and reliable, and their customer service is top-notch. I really enjoyed my time with you guys. Hopefully, there will be more transactions."</p>
+            </li>
+            <br>
+            <p>Read more reviews: <a href="https://g.co/kgs/8k4XCV" class="all-caps" style="color: var(--pry-color);" target="_blank">here</a></p>
+        </ul>
+        <h2 class="all-caps">Why Trust Gosub.ng?</h2>
+        <p>We know that trusting a new company can be challenging, especially in today’s world. That is why we have put together a few reasons why you can trust us:</p>
+        <ul>
+            <li><p>We have a proven track record, having been in the business for five years and helping over 100,000 customers save on their airtime and data costs.</p></li>
+            <li><p>We have a dedicated team of customer service representatives available around the clock to assist you with any concerns or questions. Transparency and reliability are our watchwords, and our services are straightforward with no hidden fees. What you see is what you get!</p></li>
+            <li><p>Our positive customer experiences and testimonials speak for themselves, as we have built our reputation on trust and reliability.</p></li>
+        </ul>
+        <br>
+        <p>What are you waiting for? You too can be a part of our community.</p>
+        <p>Don’t just take our word for it, experience the savings and reliability yourself. With our easy-to-use services and 24/7 customer support, you will never have to worry about being disconnected again.</p>
+        <p>Saving money on airtime and data plans is possible, and our customers are proof of that. Whether you are a 9-to-5 worker, work from home, are a small business owner, a petty trader, or a student, we have various plans that are right for you. Trust us to keep you connected without breaking the bank. Sign up today and start saving.</p>
+        <div class="author-info">
+            <div class="author" style="display: flex;  align-items: center; margin-top: 20px;">
+                    <img src="image/author.png" alt="">
+                <div>
+                    <p >Author: Evidence Ebie</p>
+                    <p style="font-style: italic;">Customer Service Representative</p>
                 </div>
             </div>
-    
-            <div class="blogArticles">
-                <div class="blogItems">
-                    <div class="blogArticlesItems">
-                        <a href="Discover-All-You-Can-Do-on-GoSub-Airtime-Data-Bills-and-More.html"><img src="image/blogimage1.png" alt="image"></a>
-                        <div>
-                            <p class="tag">Article</p>
-                            <a href="Discover-All-You-Can-Do-on-GoSub-Airtime-Data-Bills-and-More.html">Discover All You Can Do on GoSub: Airtime, Data, Bills, and More!</a>
-                            <p class="date">16th Oct, 2024</p>
-                        </div>
-                    </div>
-                    <div class="blogArticlesItems">
-                        <a href="Turning-Nigerian-Airtime-into-Cash-with-Gosub.html"><img src="image/blogimage2.png" alt="image"></a>
-                        <div>
-                            <p class="tag">Article</p>
-                            <a href="Turning-Nigerian-Airtime-into-Cash-with-Gosub.html">Turning Nigerian Airtime into Cash with Gosub.ng</a>
-                            <p class="date">17th Oct, 2024</p>
-                        </div>
-                    </div>
+            <div class="author" style="display: flex;  align-items: center; margin-top: 20px;">
+                    <img src="image/author.png" alt="">
+                <div>
+                    <p>Editor: Kelvin Iyiriaro</p>
+                    <p style="font-style: italic;">Head of Product</p>
                 </div>
-
-                <div class="blogItems">
-                    <div class="blogArticlesItems">
-                        <a href="why-does-my-data-run-out-quickly.html"><img src="image/blogimage3.png" alt="image"></a>
-                        <div>
-                            <p class="tag">Article</p>
-                            <a href="why-does-my-data-run-out-quickly.html">Why Does My Data Run Out Quickly? ...... </a>
-                            <p class="date">July 1, 2024</p>
-                        </div>
-                    </div>
-                    <div class="blogArticlesItems">
-                        <a href="gosub-testimonials-you-too-can-save-big-on-airtime-and-data-plans.html"><img src="image/blogimage4.png" alt="image"></a>
-                        <div>
-                            <p class="tag">Article</p>
-                            <a href="gosub-testimonials-you-too-can-save-big-on-airtime-and-data-plans.html">Gosub Testimonials: You Too Can Save Big on Airtime and Data Plans!</a>
-                            <p class="date">17th Oct, 2024</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="blogItems">
-                    <div class="blogArticlesItems">
-                        <a href="minimize-your-monthly-mobile-budget-with-gosub.html"><img src="image/blogimage5.png" alt="image"></a>
-                        <div>
-                            <p class="tag">Article</p>
-                            <a href="minimize-your-monthly-mobile-budget-with-gosub.html">Minimize Your Monthly Mobile Budget with Gosub.ng</a>
-                            <p class="date">16th Oct, 2024</p>
-                        </div>
-                    </div>
-                    <div class="blogArticlesItems">
-                        <a href="empowerment-through-connectivity-data-plan-reselling-with-goSub.html"><img src="image/blogimage6.png" alt="image"></a>
-                        <div>
-                            <p class="tag">Article</p>
-                            <a href="empowerment-through-connectivity-data-plan-reselling-with-goSub.html">Empowerment through Connectivity: Data Plan Reselling with GoSub.ng</a>
-                            <p class="date">17th Oct, 2024</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="blogItems">
-                    <div class="blogArticlesItems">
-                        <a href="unlocking-affordability-and-convenience-the-benefits-of-buying-cheap-data-and-airtime-from-gosub.html"><img src="image/blogimage7.png" alt="image"></a>
-                        <div>
-                            <p class="tag">Article</p>
-                            <a href="unlocking-affordability-and-convenience-the-benefits-of-buying-cheap-data-and-airtime-from-gosub.html">Unlocking Affordability and Convenience: The Benefits of Buying Cheap Data and Airtime from Gosub.ng</a>
-                            <p class="date">16th Oct, 2024</p>
-                        </div>
-                    </div>
-                    <!-- <div class="blogArticlesItems">
-                        <a href="Turning-Nigerian-Airtime-into-Cash-with-Gosub.html"><img src="image/blogimage.png" alt="image"></a>
-                        <div>
-                            <p class="tag">Article</p>
-                            <a href="Turning-Nigerian-Airtime-into-Cash-with-Gosub.html">Turning Nigerian Airtime into Cash with Gosub.ng</a>
-                            <p class="date">17th Oct, 2024</p>
-                        </div>
-                    </div> -->
-                </div>
-                
             </div>
-    
-            <a href="#" style="display: flex; align-items: center; justify-content: center;"><button style="margin-top: 10px; ">Show More!</button></a>
-        </section>
+        </div>
 
+        <div class="shareArticle" style="margin-top: 10px ;">
+            <hr>
+            <p style="margin: 10px;">Share Article</p>
+            <div style="margin: 10px;">
+                <a href="#" id="linkedin-share" target="_blank"><svg  width="20" viewBox="0 0 448 512" style="margin-right: 10px;"><path fill="#000" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a>
+                <a href="#" id="twitter-share" target="_blank"><svg width="20" viewBox="0 0 448 512" style="margin-right: 10px;"><path fill="#000" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm297.1 84L257.3 234.6 379.4 396H283.8L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5L313.6 116h47.5zM323.3 367.6L153.4 142.9H125.1L296.9 367.6h26.3z"/></svg></a>
+                <a href="#" id="facebook-share" target="_blank"><svg width="20" viewBox="0 0 448 512" style="margin-right: 10px;"><path fill="#000" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64h98.2V334.2H109.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H255V480H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"/></svg></a>
+            </div>
+
+        </div>
+    </section>
 
     <!-- This is the Footer Section of the page -->
     <div class="footerCurveEdge"></div> 
