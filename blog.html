@@ -15,6 +15,7 @@
 
 :root {
     --pry-color: #FB470D;
+    --pry-colorDark: #1f0901;
     --main-bg-color: #fff;
     --button-hover: #e23900;
 
@@ -207,9 +208,12 @@ a {
         margin: 15px 0px;
     }
     .blogArticles a{
-        color: #000;
-        font-size: 18px;
+        color: var(--pry-colorDark);
+        font-size: 16px;
         font-weight: bold;
+    }
+    .blogArticles a:hover{
+        color: var(--pry-color);
     }
     .tag{
         color: var(--button-hover);
@@ -231,8 +235,10 @@ a {
     }
     .blogArticlesItems img{
         width: 100%;
-        border-radius: 5px;
+        border-radius: 10px;
+        transition: 0.71s ease;
     }
+
 
 
 
@@ -430,11 +436,17 @@ hr{
         .blogArticlesItems img{
             width: 250px;
             }
+        .blogArticlesItems {
+            width: 600px;
+            }
         .blogItems{
             display: flex;
             justify-content: space-between;
             align-items: center;
             }
+            .blogArticlesItems img:hover{
+                width: 270px;
+        }
 
 }
 
@@ -455,7 +467,7 @@ hr{
                 <li class="nav-item"><a href="#" class="nav-link">Install App</a></li>
                 <li class="nav-item"><a href="index.html#aboutUs" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="index.html#services" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="index.html#testimonies" class="nav-link">Testimonies</a></li>
+                <li class="nav-item"><a href="index.html#testimonies" class="nav-link">Testimonials</a></li>
                 <li class="nav-item"><a href="faq.html" class="nav-link">FAQs</a></li>
                 <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
                 <li class="nav-item"><a href="https://gosub.ng/login" class="nav-link">Log in</a></li>
@@ -498,6 +510,63 @@ hr{
                             <p class="date">17th Oct, 2024</p>
                         </div>
                     </div>
+                </div>
+
+                <div class="blogItems">
+                    <div class="blogArticlesItems">
+                        <a href="why-does-my-data-run-out-quickly.html"><img src="image/blogimage.png" alt="image"></a>
+                        <div>
+                            <p class="tag">Article</p>
+                            <a href="why-does-my-data-run-out-quickly.html">Why Does My Data Run Out Quickly? ...... </a>
+                            <p class="date">July 1, 2024</p>
+                        </div>
+                    </div>
+                    <div class="blogArticlesItems">
+                        <a href="gosub-testimonials-you-too-can-save-big-on-airtime-and-data-plans.html"><img src="image/blogimage.png" alt="image"></a>
+                        <div>
+                            <p class="tag">Article</p>
+                            <a href="gosub-testimonials-you-too-can-save-big-on-airtime-and-data-plans.html">Gosub Testimonials: You Too Can Save Big on Airtime and Data Plans!</a>
+                            <p class="date">17th Oct, 2024</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blogItems">
+                    <div class="blogArticlesItems">
+                        <a href="minimize-your-monthly-mobile-budget-with-gosub.html"><img src="image/blogimage.png" alt="image"></a>
+                        <div>
+                            <p class="tag">Article</p>
+                            <a href="minimize-your-monthly-mobile-budget-with-gosub.html">Minimize Your Monthly Mobile Budget with Gosub.ng</a>
+                            <p class="date">16th Oct, 2024</p>
+                        </div>
+                    </div>
+                    <div class="blogArticlesItems">
+                        <a href="empowerment-through-connectivity-data-plan-reselling-with-goSub.html"><img src="image/blogimage.png" alt="image"></a>
+                        <div>
+                            <p class="tag">Article</p>
+                            <a href="empowerment-through-connectivity-data-plan-reselling-with-goSub.html">Empowerment through Connectivity: Data Plan Reselling with GoSub.ng</a>
+                            <p class="date">17th Oct, 2024</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blogItems">
+                    <div class="blogArticlesItems">
+                        <a href="unlocking-affordability-and-convenience-the-benefits-of-buying-cheap-data-and-airtime-from-gosub.html"><img src="image/blogimage.png" alt="image"></a>
+                        <div>
+                            <p class="tag">Article</p>
+                            <a href="unlocking-affordability-and-convenience-the-benefits-of-buying-cheap-data-and-airtime-from-gosub.html">Unlocking Affordability and Convenience: The Benefits of Buying Cheap Data and Airtime from Gosub.ng</a>
+                            <p class="date">16th Oct, 2024</p>
+                        </div>
+                    </div>
+                    <!-- <div class="blogArticlesItems">
+                        <a href="Turning-Nigerian-Airtime-into-Cash-with-Gosub.html"><img src="image/blogimage.png" alt="image"></a>
+                        <div>
+                            <p class="tag">Article</p>
+                            <a href="Turning-Nigerian-Airtime-into-Cash-with-Gosub.html">Turning Nigerian Airtime into Cash with Gosub.ng</a>
+                            <p class="date">17th Oct, 2024</p>
+                        </div>
+                    </div> -->
                 </div>
                 
             </div>
