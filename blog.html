@@ -6,458 +6,36 @@
 
     <!--Connection to google icon library-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    
+    <link rel="stylesheet" href="blog.css">
     <style>
-        
-/* Quick note: A = About, A-container = About container, O = Our Service, AC = Achievement, AQ = Qualification  */
-/* ------------- Variables ----------------------- */
-
-:root {
-    --pry-color: #FB470D;
-    --pry-colorDark: #1f0901;
-    --main-bg-color: #fff;
-    --button-hover: #e23900;
-
-}
-
-/* ----------------------------------------------- */
-/* ------------- Universal Styling ----------------*/
-/* ----------------------------------------------- */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', verdana;
-    font-family: 'Open Sans', verdana;
-    
-}
-
-.header{
-    background-color: #fff;
-    height: 60px;
-    top: 0;
-    position: sticky;
-    z-index: 5;
-    margin-bottom: 10px;
-}
-
-button{
-    padding: 10px 30px 10px 30px;
-    margin-top: 20px;
-    border-radius: 5px;
-    color: #fff;
-    background-color: var(--pry-color);
-    border: 1px solid var(--pry-color) ;
-    transition: 0.26s ease-in;
-}
-button:hover{
-    color: #fff;
-    background-color: var(--button-hover);
-}
-
-/* Page scroll animation for styling each section */
-.reveal{
-    position: relative;
-    transform: translateY(100px);
-    opacity: 0;
-    transition: all 1.5s ease;
-}
-.reveal.active{
-    transform: translateY(0px);
-    opacity: 1;
-}
-
-body{
-    background-color: #fff;
-}
-
-/* -----------Styling Header --------------- */
-
-.logo{
-    display: block;
-}
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: #000;
-}
-.hamburger {
-    display: block;
-    cursor: pointer;
-}
-.navbar {
-    background-color: #fff;
-    display: flex;
-    height: 60px;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px ;
-}
-li {
-    list-style: none;
-}
-a {
-    text-decoration: none;
-}
-.nav-menu {
-    position: fixed;
-    left: 100%;
-    top: 50px;
-    /* flex-direction: column; */
-    align-items:start ;
-    background-color: var(--main-bg-color);
-    width: 100%;
-    text-align: left;
-    transition: 0.5s;
-    padding: 20px;
-}
-.nav-menu.active {
-    left: 0;
-}
-.nav-item {
-    margin: 15px 0;
-}
-.nav-menu .nav-item a .button{
-    display:inline ;
-}
-.nav-link{
-    color: #000;
-}
-.nav-link:hover{
-    color: var(--button-hover);
-}
-.button{
-    background-color: var(--pry-color);
-    border-radius: 3px;
-    text-align: center;
-    width: 100%;
-    margin: 10px auto;
-    padding: 10px;
-    display: block;
-    color: #fff;
-    
-}
-.button:hover{
-    background-color: var(--button-hover);
-    color: white;
-}
-.hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-}
-.hamburger.active .bar:nth-child(1) {
-    -webkit-transform: translateY(8px) rotate(45deg);
-    transform: translateY(8px) rotate(45deg);
-}
-.hamburger.active .bar:nth-child(3) {
-    -webkit-transform: translateY(-8px) rotate(-45deg);
-    transform: translateY(-8px) rotate(-45deg);
-}
-/* -----------Styling Introduction section-------- */
-
-/* .A-container{
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.A-Image img{
-    display: none;
-} */
-/* This is for styling the Blog page content */
-.blog{
-    margin: 15px;
-}
-    .blogHeader{
-        margin: 15px 0px;
-        background: url(image/networkMass.png) ;
-        background-color: var(--pry-color);
-        border-radius: 5px;
-        color: #fff;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: 120px;
+        .blog{
+            margin: 15px;
     }
-    .BgImage{
-        position: fixed;
-        width: 50%;
+    .blog h2{
+        color: #000000;
     }
-    .blogHeaderItems{
-        padding: 20px;
-    }
-    .blogHeaderItems p{
-        margin: 10px 0px;
-    }
-    .blogHeader input{
-        width: 100%;
-        max-width: 210px;
-        padding: 12px;
-        border: 1px solid var(--pry-color);
-        border-radius: 5px;
-        outline: none;
-        color: black;
-        font-size: 0.9rem;
-        margin-right: 20px;
-    }
-    .blogArticles{
-        margin: 15px 0px;
-    }
-    .blogArticles a{
-        color: var(--pry-colorDark);
-        font-size: 16px;
-        font-weight: bold;
-    }
-    .blogArticles a:hover{
-        color: var(--pry-color);
-    }
-    .tag{
-        color: var(--button-hover);
-        font-size: 16px;
-    }
-    .date{
-        color: #4d4d4d;
-        font-size: 14px;
-    }
-    .blogItems{
-        display: block;
-    }
-    .blogArticlesItems{
-        display: block;
-        margin: 12px 0px 20px 0px;
-    }
-    .blogArticlesItems div{
-        margin: 0px;
-    }
-    .blogArticlesItems img{
-        width: 100%;
-        border-radius: 10px;
-        transition: 0.71s ease;
-    }
+        .blogHeader h2 {
 
-
-
-
-/* --------------Styling Footer section ---------- */
-
-.footerCurveEdge{
-    width: 100px;
-    height: 100px;
-    background-color: #000;
-}
-.footer:before{
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    margin-top: -140px;
-    content: '';
-    z-index: 1;
-    left: 0;
-    background-color: #fff;
-    border-bottom-left-radius: 100px;
-}
-.footer{
-    background-color: #000000;
-    color: #ffffff;
-    padding: 40px;
-    border-top-right-radius: 100px;
-    
-}
-.footer h4{
-    color: var(--pry-color);
-    margin-top: 20px;
-    margin-bottom: 5px;
-    
-}
-.FooterLinks{
-    display: grid;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.FooterLinks h2{
-    color: #fff;
-    font-size: 30px;
-    font-weight: lighter;
-}
-.footer p{
-    color: #ffffff;
-    margin-bottom: 05px;
-    font-weight: lighter;
-}
-.footer a{
-    color: #ffffff;
-}
-hr{
-    border-color: #4d4d4d;
-}
-.hr{
-    text-align: center;
-    padding: 20px 0 20px 0;
-}
-.hr p{
-    padding: 20px 0;
-}
-
-.footerHR .hr p{
-    
-    color: #ffffff;
-}
-.F-newsLetter{
-    margin-right: 15px;
-}
-.F-newsLetter input{
-    width: 100%;
-    padding: 12px;
-    border: 1px solid var(--pry-color);
-    border-radius: 5px;
-    outline: none;
-    color: black;
-    font-size: 0.9rem;
-    margin-right: 20px;
-}
-.subFooterLink{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-}
-.belowHr{
-    text-align: center; 
-}
-.belowHr div{
-    margin-top: 20px;
-}
-.copyright{
-    font-weight: lighter;
-}
-/* ----------------------------------------------- */
-/* ---------------- Tablet Styling ----------------*/
-/* ----------------------------------------------- */
-
-@media (min-width: 720px) {
-    /* Navigation menu */
-    .header{
-        margin-bottom: 0px;
+            color: #fff;
+            font-size: 24px;
     }
-    .nav-menu {
-        display: flex;
-        position: static;
-        flex-direction: row;
-        justify-content: flex-end;
-        background-color: transparent;
-
+        .blogHeader p{
+            color: #fff;
+            font-size: 16px;
     }
-
-    .hamburger {
-        display: none;
-    }
-
-        .nav-item {
-            margin: 0 10px;
-        }
-
-        .nav-link:hover{
-            color: var(--button-hover);
-        }
-        .mainContainer{
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            text-align: start;
-        }
-
-
-                /* This is for styling the Blog page content */
-                .blog{
+    @media (min-width: 720px) {
+        .blog{
             margin: 20px 100px;
         }
-        .blogHeader{
-            background-position: 250px;
     }
-        .blogHeaderItems{
-            padding: 50px;
-        }
-        .blogArticlesItems{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        }
-        .blogArticlesItems div{
-            margin: 0px 15px;
-        }
-        .blogArticlesItems img{
-        width: 350px;
-        }
-
-
-        .footer{
-            padding: 40px;
-        }
-        .button{
-                display: none;
-        }
-        .hr{
-            padding: 20px 30px 20px 30px;
-        }
-        .FooterLinks{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content:space-between;
-            margin: 0 30px 20px 30px;
-        }
-        .belowHr{
-            text-align: center; 
-            display: flex; 
-            justify-content: space-between;
-            margin: 0 30px;
-        }
-        .belowHr div{
-            margin-top: 0px;
-        }
-
-}
-
-@media (min-width: 900px){
-    /* This is for styling the Blog page content */
-    .blog{
+    @media (min-width: 900px){
+            .blog{
                 margin: 20px 70px;
             }
-            .blogHeader{
-                background-size: 50%;
-                background-position: 700px;
-        }
-        .blogHeaderItems{
-            padding: 70px 50px;
-        }
-        .blogArticlesItems img{
-            width: 250px;
-            }
-        .blogArticlesItems {
-            width: 600px;
-            }
-        .blogItems{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            }
-            .blogArticlesItems img:hover{
-                width: 270px;
-        }
+    }
 
-}
-
-/* ----------------------------------------------- */
-/* ---------------- Laptop Styling ----------------*/
-/* ----------------------------------------------- */
-@media ( min-width: 1000px) {
-
-}
     </style>
-    <title>Document</title>
+    <title>Gosub Blog</title>
 </head>
 <body>
     <header class="header">
@@ -559,18 +137,8 @@ hr{
                             <p class="date">16th Oct, 2024</p>
                         </div>
                     </div>
-                    <!-- <div class="blogArticlesItems">
-                        <a href="Turning-Nigerian-Airtime-into-Cash-with-Gosub.html"><img src="image/blogimage.png" alt="image"></a>
-                        <div>
-                            <p class="tag">Article</p>
-                            <a href="Turning-Nigerian-Airtime-into-Cash-with-Gosub.html">Turning Nigerian Airtime into Cash with Gosub.ng</a>
-                            <p class="date">17th Oct, 2024</p>
-                        </div>
-                    </div> -->
                 </div>
-                
             </div>
-    
             <a href="#" style="display: flex; align-items: center; justify-content: center;"><button style="margin-top: 10px; ">Show More!</button></a>
         </section>
 
@@ -579,8 +147,6 @@ hr{
     <div class="footerCurveEdge"></div> 
     <div class="footer" id="contact">
         <div class="FooterLinks">
-
-            
             <div class="F-newsLetter" style="margin-top: 20px;">
                 <div style="display: grid; justify-items: left; align-items: center;margin-top: 10px; margin-bottom: 10px;">
                     <img src="footer logo.png" alt="" style="width: 180px;">
@@ -588,8 +154,6 @@ hr{
                 <input type="text" placeholder="Subscribe to our newsletter"><br>
                 <a href="#"><button style="margin-top: 10px;">Subscribe</button></a>
             </div>
-            
-            
             <div class="F-helpLink">
                 <h4>Help Links</h4>
                 <p><a href="faq.html">FAQs</a></p>
@@ -616,9 +180,7 @@ hr{
                 </div>
             </div>   
         </div>
-
     <div class="footerHR">
-        
         <div class="hr">
             <hr>
         </div>
@@ -636,32 +198,5 @@ hr{
     </div>
 
 </body>
-
-
-<script>
-    const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.querySelector(".nav-menu");
-    const navLink = document.querySelectorAll(".nav-link");
-
-    hamburger.addEventListener("click", mobileMenu);
-    navLink.forEach(n => n.addEventListener("click", closeMenu));
-
-    function mobileMenu() {
-        hamburger.classList.toggle("active");
-        navMenu.classList.toggle("active");
-    }
-    function closeMenu() {
-        hamburger.classList.remove("active");
-        navMenu.classList.remove("active");
-    }
-</script>
-
-<!-- the script for controlling the copyright  -->
-<script>
-        document.addEventListener("DOMContentLoaded", function() {
-        const currentYear = new Date().getFullYear();
-        const copyrightText = `Copyright © ${currentYear} Gosub All Rights Reserved.`;
-        document.getElementById("copyright").textContent = copyrightText;
-    });
-</script>
+<script src="blog.js"></script>
 </html>
