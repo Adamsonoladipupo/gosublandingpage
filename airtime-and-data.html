@@ -8,145 +8,186 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-            /* Styling the main setion of the page */
-                .btn{
-                background-color: var(--pry-color);
-                color: #fff;
-                padding: 10px 30px;
-                border-radius: 5px;
-                margin: 0 auto;
+            :root {
+        --pry-color: #FB470D;
+        --main-bg-color: #fff;
+        --button-hover: #e23900;
+    
+    }
+            .section-1{
+                    display: block;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 5%;
             }
-            section a{
-                color: #F4F4F4;
+            .section-1:nth-child(1){
+                text-align: center;
             }
-            .first-section{
-                display: grid;
+            .section-1 h1{
+                    font-size: 30px;
+                    color: var(--pry-color);
+            }
+            .section-1 p{
+                    font-size: 18px;
+            }
+            .section-1 img{
+                width: 100%;
+                margin: 30px 0;
+            }
+            .a-and-d{
+                display: block;
                 align-items: center;
                 justify-content: center;
+                gap: 15px;
+                margin: 30px 0;
             }
-            .first-section img{
+            .a-and-d-item{
+                display: block;
+                align-items: center;
+                text-align: center;
+                padding: 20px;
+                border-radius: 10px;
+                min-height: 130px;
+                box-shadow: 4px 4px 11px rgba(0, 0, 0, 0.06);
+                margin-bottom: 10px;
+            }
+            .section-1{
+                    display: block;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 5%;
+            }
+            .section-3:nth-child(2){
+                text-align: left;
+            }
+            .section-3 h2{
+                    font-size: 30px;
+                    color: var(--pry-color);
+            }
+            .section-3 p{
+                    font-size: 18px;
+            }
+            .section-3 img{
                 width: 100%;
+                margin: 30px 0;
+            }
+            .section-4{
+                display: block;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 4px 4px 11px rgba(0, 0, 0, 0.06);
                 margin: 20px 0;
             }
-            .first-section h1{
-                font-size: 35px;
-                color: var(--pry-color);
-                line-height: 110%;
-            }
-            .first-section p{
-                font-size: 20px;
-            }
-            .fisrt-section-text{
-                /* display: block; */
-                text-align: center;
-                gap: 15px;
-            }
-            .second-section{
-                background-color: #F4F4F4;
-                padding: 50px 20px;
-                text-align: center;
-                margin-bottom: 20px;
-                margin: -20px;
-            }
-            .second-section h2{
+            .section-4 h3{
                 font-size: 24px;
-            }
-            .a-to-c-items{
-                display: grid; 
-                gap: 5%; 
-                margin: 10px 10px;
-                justify-content: center;
-            }
-            .a-to-c-step{
-                display: grid; 
-                justify-content: center; 
-                align-items: center; 
-                text-align: center; 
-                padding: 10px;
-            }
-            .a-to-c-step p:nth-child(2){
-                font-weight: bold; 
                 color: var(--pry-color);
             }
-            .step {
-                border: 2px solid #FB470D; 
-                width: 30px; 
-                height: 30px; 
-                border-radius: 100%; 
-                display: grid; 
-                justify-items: center; 
-                align-items: center; 
-                margin: 5px auto;
-                color: var(--pry-color);
-                font-weight: bold;
+        @media (min-width: 750px){
+            .section-1{
+                    display: flex;
+                    justify-content: center;
+                    gap: 5%;
             }
-            @media (min-width: 750px){
-                            /* Styling the main setion of the page */
-            section a{
-                color: #F4F4F4;
+            .section-1:nth-child(1){
+                text-align: left;
             }
-            .first-section{
+            .section-1 h1{
+                    font-size: 40px;
+                    color: var(--pry-color);
+            }
+            .section-1 p{
+                    font-size: 18px;
+            }
+            .section-1 img{
+                width: 300px;
+            }
+            .a-and-d{
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                gap: 10px;
+                gap: 15px;
+                margin: 30px 0;
             }
-            .first-section img{
-                width: 300px;
+            .a-and-d-item{
+                min-height: 150px;
             }
-            .first-section h1{
-                font-size: 45px;
-                color: var(--pry-color);
-                line-height: 110%;
+            .section-3{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 5%;
             }
-            .first-section p{
-                font-size: 24px;
-            }
-            .fisrt-section-text{
+            .section-3:nth-child(1){
                 text-align: left;
             }
-            .second-section{
-                padding: 50px 100px;
-                text-align: center;
-                margin: 50px -50px;
+            .section-3 h2{
+                    font-size: 30px;
+                    color: var(--pry-color);
             }
-            .second-section h2{
-                font-size: 30px;
+            .section-3 p{
+                    font-size: 18px;
             }
-            .a-to-c-items{
-                display: flex; 
-                gap: 5%; 
-                margin: 10px 20px;
+            .section-3 img{
+                width: 300px;
             }
-            .a-to-c-step{
-                display: grid; 
-                justify-content: center; 
-                align-items: center; 
-                text-align: center; 
-                padding: 10px;
+            .section-3:nth-child(3){
+                text-align: end;
             }
-            .a-to-c-step p:nth-child(2){
-                font-weight: bold; 
+            .section-4{
+                padding: 50px;
+            }
+            .section-4 h3{
+                font-size: 28px;
                 color: var(--pry-color);
             }
-            .step {
-                display: grid; 
-                justify-items: center; 
-                align-items: center; 
-                margin: 5px auto;
+        }
+        @media (min-width: 900px){
+            .section-1{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 5%;
             }
+            .section-1 h1{
+                    font-size: 45px;
+                    color: var(--pry-color);
             }
-            @media (min-width: 900px){
-                    .first-section img{
-                    width: 400px;
-                }
-                .second-section{
-                    margin: 50px -100px;
-                }
+            .section-1 p{
+                    font-size: 20px;
             }
+            .section-1 img{
+                width: 450px;
+            }
+            .a-and-d-item{
+                min-height: 130px;
+            }
+            .section-3{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 5%;
+            }
+            .section-3 h2{
+                    font-size: 35px;
+                    color: var(--pry-color);
+            }
+            .section-3 p{
+                    font-size: 20px;
+            }
+            .section-3 img{
+                width: 450px;
+            }
+        }
+        @media (min-width: 1000px){
+            .a-and-d-item{
+                min-height: 120px;
+            }
+        }
     </style>
-
-    <title>Airtime to Cash</title>
+    <title>Airtime and Data</title>
 </head>
 <body>
     <header class="header">
@@ -172,38 +213,40 @@
 
     <!-- input the page content in this section -->
     <section>
-        <div class="first-section">
-            <div class="fisrt-section-text">
-                <h1>Convert your Airtime to Cash</h1>
-                <p>Now you can exchange your excess airtime for value</p>
-                <button><a href="" >Get Started!</a></button>
+        <div class="section-1">
+            <div>
+                <h1>Buy your Airtime & Data on Gosub</h1>
+                <p>Buy MTN, Airtel, Glo, and 9Mobile airtime and internet data any time</p>
+                <button><a href="">Get Started</a></button>
             </div>
-            <img src="image/popimage.png" alt="">
+            <img src="image/airtime-and-data.png" alt="">
         </div>
-        <div class="second-section">
-            <h2 style="margin-bottom: 30px;">Convert your Airtime to cash in three easy steps</h2>
-            <div class="a-to-c-items">
-                <div class="a-to-c-step">
-                    <div class="step">1</div>
-                    <p>Log In</p>
-                    <p>Access your Gosub account and go to the "Airtime" section.</p>
-                </div>
-                <div class="a-to-c-step">
-                    <div class="step">2</div>
-                    <p>Select Transfer</p>
-                    <p>Choose "Airtime to Cash" and enter the MTN number to transfer from.</p>
-                </div>
-                <div class="a-to-c-step">
-                    <div class="step">3</div>
-                    <p>Complete Form</p>
-                    <p>Fill in the details and submit the form.</p>
-                </div>
+        <div class="a-and-d">
+            <div class="a-and-d-item">
+                <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"style="width:20px"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg></span>
+                <p>Top up airtime on your phone in a few seconds.</p>
             </div>
-            <button><a href="">Learn More!</a></button>
-            
+            <div class="a-and-d-item">
+                <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" style="width:20px"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M54.2 202.9C123.2 136.7 216.8 96 320 96s196.8 40.7 265.8 106.9c12.8 12.2 33 11.8 45.2-.9s11.8-33-.9-45.2C549.7 79.5 440.4 32 320 32S90.3 79.5 9.8 156.7C-2.9 169-3.3 189.2 8.9 202s32.5 13.2 45.2 .9zM320 256c56.8 0 108.6 21.1 148.2 56c13.3 11.7 33.5 10.4 45.2-2.8s10.4-33.5-2.8-45.2C459.8 219.2 393 192 320 192s-139.8 27.2-190.5 72c-13.3 11.7-14.5 31.9-2.8 45.2s31.9 14.5 45.2 2.8c39.5-34.9 91.3-56 148.2-56zm64 160a64 64 0 1 0 -128 0 64 64 0 1 0 128 0z"/></svg></span>
+                <p>Subscribe to your favorite mobile data plan easily</p>
+            </div>
+            <div class="a-and-d-item">
+                <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style="width:20px"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M80 0C44.7 0 16 28.7 16 64l0 384c0 35.3 28.7 64 64 64l224 0c35.3 0 64-28.7 64-64l0-384c0-35.3-28.7-64-64-64L80 0zm80 432l64 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-64 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg></span>
+                <p>Buy airtime from any Nigerian mobile network.</p>
+            </div>
+        </div>
+        <div class="section-3">
+            <img src="image/send-data-and-airtime.png" alt="">
+            <div>
+                <h2>Send internet data and airtime to your friends and family.</h2>
+                <p>Top-up your phone or send your loved ones data and airtime on <a href="index.html" style="color: var(--pry-color);">Gosub.ng</a></p>
+            </div>
+        </div>
+        <div class="section-4">
+            <h3>Gosub.ng, your favorite Nigeria platform to buy, send or sell Data and Airtime at an affordable rate.</h3>
+            <button><a href="index.html">Get Started</a></button>
         </div>
     </section>
-
 
     <!-- This is the Footer Section of the page -->
     <div class="footerCurveEdge"></div> 
@@ -267,4 +310,3 @@
 
 </body>
 <script src="script.js"></script>
-</html>
