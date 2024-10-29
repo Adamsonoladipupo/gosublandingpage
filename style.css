@@ -39,6 +39,7 @@
         background-color: var(--pry-color);
         border: 1px solid var(--pry-color) ;
         transition: 0.26s ease-in;
+        cursor: pointer;
     }
     button:hover{
         color: #fff;
@@ -272,7 +273,6 @@
             .nav-item {
                 margin: 0 10px;
             }
-    
             .nav-link:hover{
                 color: var(--button-hover);
             }
