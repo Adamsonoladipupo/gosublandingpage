@@ -37,32 +37,26 @@
                 font-size: 20px;
             }
             .fisrt-section-text{
-                /* display: block; */
                 text-align: center;
                 gap: 15px;
-            }
-            .second-section{
-                background-color: #F4F4F4;
-                padding: 50px 20px;
-                text-align: center;
-                margin-bottom: 20px;
-                margin: -20px;
             }
             .second-section h2{
                 font-size: 24px;
             }
             .a-to-c-items{
                 display: grid; 
-                gap: 5%; 
+                gap: 10px; 
                 margin: 10px 10px;
                 justify-content: center;
             }
             .a-to-c-step{
-                display: grid; 
+                display: block; 
                 justify-content: center; 
                 align-items: center; 
                 text-align: center; 
                 padding: 10px;
+                background-color: #ffffff;
+                box-shadow: 4px 4px 11px rgba(0, 0, 0, 0.06);
             }
             .a-to-c-step p:nth-child(2){
                 font-weight: bold; 
@@ -80,6 +74,20 @@
                 color: var(--pry-color);
                 font-weight: bold;
             }
+            .section-2 img{
+                width: 100%;
+                margin-top: 30px;
+            }
+            .section-2{
+                background-color: #FFEBE4;
+                font-size: 18px;
+                display: block;
+                align-items: center;
+                border-radius: 10px;
+                padding: 30px 20px;
+                text-align: center;
+                margin-top: 20px;
+            }
             @media (min-width: 750px){
                             /* Styling the main setion of the page */
             section a{
@@ -95,7 +103,7 @@
                 width: 300px;
             }
             .first-section h1{
-                font-size: 45px;
+                font-size: 40px;
                 color: var(--pry-color);
                 line-height: 110%;
             }
@@ -106,7 +114,7 @@
                 text-align: left;
             }
             .second-section{
-                padding: 50px 100px;
+                padding: 50px 50px;
                 text-align: center;
                 margin: 50px -50px;
             }
@@ -115,15 +123,18 @@
             }
             .a-to-c-items{
                 display: flex; 
-                gap: 5%; 
+                gap: 10px; 
                 margin: 10px 20px;
+                
             }
             .a-to-c-step{
-                display: grid; 
+                display: block; 
                 justify-content: center; 
                 align-items: center; 
                 text-align: center; 
                 padding: 10px;
+                width: 300px;
+                background-color: aqua;
             }
             .a-to-c-step p:nth-child(2){
                 font-weight: bold; 
@@ -135,14 +146,37 @@
                 align-items: center; 
                 margin: 5px auto;
             }
+            .section-2 img{
+                width: 400px;
+            }
+            .section-2a {
+                text-align: left;
+            }
+            .section-2{
+                font-size: 22px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-radius: 10px;
+                padding: 10px;
+                gap: 15px;
+            }
             }
             @media (min-width: 900px){
                     .first-section img{
-                    width: 400px;
+                    width: 500px;
                 }
-                .second-section{
-                    margin: 50px -100px;
-                }
+
+                .section-2 img{
+                width: 400px;
+            }
+            .section-2{
+                font-size: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 50px;
+            }
             }
     </style>
 
@@ -178,7 +212,7 @@
                 <p>Now you can exchange your excess airtime for value</p>
                 <button><a href="" >Get Started!</a></button>
             </div>
-            <img src="image/popimage.png" alt="">
+            <img src="image/airtime_to_cash.png" alt="">
         </div>
         <div class="second-section">
             <h2 style="margin-bottom: 30px;">Convert your Airtime to cash in three easy steps</h2>
@@ -198,9 +232,25 @@
                     <p>Complete Form</p>
                     <p>Fill in the details and submit the form.</p>
                 </div>
+                <div class="a-to-c-step">
+                    <div class="step">3</div>
+                    <p>Complete Form</p>
+                    <p>Fill in the details and submit the form. Just testing with random</p>
+                </div>
+                <div class="a-to-c-step">
+                    <div class="step">3</div>
+                    <p>Complete Form</p>
+                    <p>Fill in the details and submit the form.</p>
+                </div>
             </div>
-            <button><a href="">Learn More!</a></button>
-            
+        </div>
+        <div class="section-2">
+            <div class="section-2a">
+                <h2>Let's get you started!</h2>
+                <p>Convert Airtime to cash, buy Airtime, Data, Electricity Bills and Cable TV subscription</p>
+                <button><a href="#">Get Started!</a></button>
+            </div>
+            <img src="image/gosub-mobile-mockup.png" alt="">
         </div>
     </section>
 
